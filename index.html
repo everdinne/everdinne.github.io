@@ -52,48 +52,6 @@
     </div>
 </section>
 
-  <section id="reports" class="py-5">
-    <div class="container">
-        <h2 class="mb-5 text-center">Featured Work</h2>
-        <div class="row g-4">
-            
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm card-legal">
-                    <div class="card-body p-4">
-                        <span class="category-tag tag-legal">Legal & Compliance</span>
-                        <h5 class="card-title fw-bold">GDPR & AI Strategy</h5>
-                        <p class="card-text text-muted small">B2B digital dependency analysis and compliance framing for SFR.</p>
-                        <a href="law.html" class="btn btn-outline-dark btn-sm mt-3">Read Report</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm card-data">
-                    <div class="card-body p-4">
-                        <span class="category-tag tag-data">Data Science</span>
-                        <h5 class="card-title fw-bold">Consumer Behavior Analysis</h5>
-                        <p class="card-text text-muted small">Predictive modeling using Python to understand user purchase paths.</p>
-                        <a href="data.html" class="btn btn-outline-dark btn-sm mt-3">Read Report</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm card-literature">
-                    <div class="card-body p-4">
-                        <span class="category-tag tag-literature">Literature</span>
-                        <h5 class="card-title fw-bold">Russian Lit & Ethics</h5>
-                        <p class="card-text text-muted small">Exploring faith and doubt through The Brothers Karamazov.</p>
-                        <a href="lit.html" class="btn btn-outline-dark btn-sm mt-3">Read Review</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     //  number of each theme 
@@ -122,5 +80,95 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <section id="reports" class="py-5">
+    <div class="container">
+        <h2 class="mb-5 text-center">Featured Work</h2>
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+               <div class="card h-100 border-0 shadow-sm card-legal">
+                 <div class="card-body p-4">
+                 <span class="category-tag tag-legal">Legal & Compliance</span>
+                 <h5 class="card-title fw-bold">GDPR & AI Strategy</h5>
+                <p class="card-text text-muted small">B2B digital dependency analysis...</p>
+                <button class="btn btn-outline-dark btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#modalLegal"> 
+                    View Full Report (PDF)
+                </button>
+                 </div>
+                </div>
+                </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm card-data">
+                    <div class="card-body p-4">
+                        <span class="category-tag tag-data">Data Science</span>
+                        <h5 class="card-title fw-bold">Consumer Behavior Analysis</h5>
+                        <p class="card-text text-muted small">Predictive modeling using Python to understand user purchase paths.</p>
+                       <button class="btn btn-outline-dark btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#modalData">
+                        View Full Report (PDF)
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm card-literature">
+                    <div class="card-body p-4">
+                        <span class="category-tag tag-literature">Literature</span>
+                        <h5 class="card-title fw-bold">Russian Lit & Ethics</h5>
+                        <p class="card-text text-muted small">Exploring faith and doubt through The Brothers Karamazov.</p>
+                        <button class="btn btn-outline-dark btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#modalLit">
+                         View Review (PDF) 
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <div class="modal fade" id="modalLegal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 90vh;">
+        <div class="modal-content h-100 border-0 rounded-0">
+            <div class="modal-header border-0 bg-white p-3">
+                <h5 class="modal-title small text-uppercase fw-bold" style="letter-spacing: 2px; color: #143109;">Strategic Memo: GDPR & AI</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0 h-100 bg-light">
+                <iframe src="assets/reports/legal_report.pdf" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalData" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 90vh;">
+        <div class="modal-content h-100 border-0 rounded-0">
+            <div class="modal-header border-0 bg-white p-3">
+                <h5 class="modal-title small text-uppercase fw-bold" style="letter-spacing: 2px; color: #0a1a2f;">Consumer Analytics: Python Modeling</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0 h-100 bg-light">
+                <iframe src="assets/reports/data_report.pdf" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalLit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 90vh;">
+        <div class="modal-content h-100 border-0 rounded-0">
+            <div class="modal-header border-0 bg-white p-3">
+                <h5 class="modal-title small text-uppercase fw-bold" style="letter-spacing: 2px; color: #721817;">Literary Review: The Russian Soul</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0 h-100 bg-light">
+                <iframe src="assets/reports/lit_report.pdf" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

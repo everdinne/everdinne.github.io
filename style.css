@@ -170,3 +170,18 @@ body.theme-literature {
 .tag-legal { color: #143109; }
 .tag-data { color: #0a1a2f; }
 .tag-literature { color: #721817; }
+
+
+
+/* For PDF file */
+.modal-content {
+    box-shadow: 0 20px 40px -10px rgba(248, 247, 247, 0.5);
+}
+
+/* movement of pdf */
+.card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.card:hover {
+    transform: scale(1.02);
+}
