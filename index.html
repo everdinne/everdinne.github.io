@@ -47,15 +47,21 @@
         <p class="hero-quote" id="hero-quote">
           The things that resist being named are usually the ones worth examining.
         </p>
+        <p class="hero-position">
+          Data &amp; AI Strategy · Regulatory Technology · EU Compliance
+        </p>
+        <p class="hero-position-sub">
+          MSc in Data Science &amp; AI Strategy, currently working on GDPR/DSA compliance at the intersection of legal and technical teams. Based in Paris &amp; Berlin.
+        </p>
         <p class="hero-sub">
           I work at the place where legal language meets technical architecture —
           and where neither one alone is enough. I got here by way of literature
           and philosophy, which turns out to be exactly the right preparation.
         </p>
-        <p class="hero-sub hero-sub-2">
-          Nobody plans this kind of path. It just keeps making sense in retrospect.
-        </p>
-        <p class="hero-hint">↑ click to read more</p>
+        <div class="hero-actions">
+          <a href="assets/cv.pdf" class="cv-btn" download>Download CV ↓</a>
+          <p class="hero-hint">↑ click quote to read more</p>
+        </div>
       </div>
       <div class="hero-right">
         <div class="hero-tag-stack">
@@ -64,9 +70,24 @@
           <span class="htag lit">Literature &amp; Philosophy</span>
         </div>
         <div class="hero-meta">
+          <span class="hero-meta-label">Currently</span>
           <span>emlyon · Paris</span>
           <span>TU Berlin</span>
           <span>Trust &amp; Fund</span>
+        </div>
+        <div class="hero-meta hero-meta-langs">
+          <span class="hero-meta-label">Languages</span>
+          <span>Mandarin — native</span>
+          <span>English — fluent</span>
+          <span>French — working</span>
+        </div>
+        <div class="hero-meta hero-meta-tools">
+          <span class="hero-meta-label">Tools</span>
+          <span>Python · R · SQL</span>
+          <span>NumPy · Pandas</span>
+          <span>Power BI · Git</span>
+          <span>HTML · CSS</span>
+          <span>GDPR · DSA</span>
         </div>
       </div>
     </section>
@@ -74,16 +95,18 @@
     <!-- IMPACT -->
     <section class="impact">
       <div class="impact-item">
-        <span class="impact-verb">Translate</span>
-        <span class="impact-text">regulatory language into something engineers can actually use — which is harder than it sounds.</span>
+        <div class="impact-verb">
+          Legal &amp; Compliance
+          <span class="impact-verb-tag">EU · GDPR · DSA</span>
+        </div>
+        <p class="impact-text">Working with legal and technical teams to translate GDPR/DSA obligations into system-level decisions — and identifying where compliance breaks under real implementation.</p>
       </div>
       <div class="impact-item">
-        <span class="impact-verb">Make visible</span>
-        <span class="impact-text">the gap between what the law assumes and what systems actually do. The gap is usually larger than expected.</span>
-      </div>
-      <div class="impact-item">
-        <span class="impact-verb">Build</span>
-        <span class="impact-text">bridges across domains that were never meant to understand each other. Someone has to.</span>
+        <div class="impact-verb">
+          Machine Learning
+          <span class="impact-verb-tag">Python · Scikit-learn</span>
+        </div>
+        <p class="impact-text">Building foundational ML fluency — classification, regression, ensemble methods, end-to-end pipelines — with a focus on how models behave inside regulated systems.</p>
       </div>
     </section>
 
@@ -91,7 +114,7 @@
 
     <!-- WORK -->
     <section id="work">
-      <p class="section-label">Selected work</p>
+      <p class="section-label">Selected work <span class="section-hint">— descriptions shift as you read</span></p>
 
       <button class="work-item legal" data-domain="legal" data-theme="structure" data-context="Structure"
         data-pdf="assets/reports/gdpr_dsa_report.pdf"
@@ -102,7 +125,7 @@
         data-desc-meaning="What it means to hold something accountable when no one is actually deciding.">
         <span class="work-num">01</span>
         <div class="work-body">
-          <p class="work-tag">Legal &amp; Compliance</p>
+          <p class="work-tag">Legal &amp; Compliance <span class="work-outcome">Internship project · Trust &amp; Fund</span></p>
           <p class="work-title"><em>GDPR, DSA,</em> and the question of machine accountability</p>
           <p class="work-desc">Filling the gap between legal obligation and technical reality in EU systems.</p>
         </div>
@@ -118,9 +141,25 @@
         data-desc-meaning="What it means to turn someone into a pattern — and what quietly drops out.">
         <span class="work-num">02</span>
         <div class="work-body">
-          <p class="work-tag">Data Science</p>
+          <p class="work-tag">Data Science <span class="work-outcome">MSc coursework · emlyon</span></p>
           <p class="work-title"><em>What patterns</em> in behavior actually tell us</p>
           <p class="work-desc">Predictive modeling of consumer behavior — and why the model is never the whole story.</p>
+        </div>
+        <span class="work-arrow">↗</span>
+      </button>
+
+      <button class="work-item data" data-domain="data" data-theme="behavior" data-context="Behavior"
+        data-pdf="assets/reports/ekimetrics_report.pdf"
+        aria-label="Open report: Ekimetrics M&M Technology Integration"
+        data-intro="On what it takes to make systems that were never designed to talk to each other actually work together."
+        data-desc-structure="A technical integration roadmap for converging MMM, CDP, and AI platforms across business units."
+        data-desc-behavior="Where data architecture decisions become business decisions — and how to map that transition."
+        data-desc-meaning="What it means to build infrastructure that has to survive the people who designed it.">
+        <span class="work-num">03</span>
+        <div class="work-body">
+          <p class="work-tag">Data &amp; AI Architecture <span class="work-outcome">5-month in-company project · Ekimetrics</span></p>
+          <p class="work-title"><em>MMM, CDP, AI</em> — a technical integration strategy</p>
+          <p class="work-desc">Technology &amp; Data Integration Lead — architecture, roadmap, and privacy compliance across converging platforms.</p>
         </div>
         <span class="work-arrow">↗</span>
       </button>
@@ -132,9 +171,9 @@
         data-desc-structure="A reading of moral structure in The Brothers Karamazov."
         data-desc-behavior="How Ivan Karamazov's arguments work — and why they keep working on you."
         data-desc-meaning="On the ethics of certainty — and why being right doesn't resolve it.">
-        <span class="work-num">03</span>
+        <span class="work-num">04</span>
         <div class="work-body">
-          <p class="work-tag">Literature</p>
+          <p class="work-tag">Literature <span class="work-outcome">BA thesis · NTU</span></p>
           <p class="work-title"><em>Faith, doubt,</em> and The Brothers Karamazov</p>
           <p class="work-desc">A reading of moral structure in The Brothers Karamazov.</p>
         </div>
@@ -148,25 +187,12 @@
     <section id="about" class="about-grid" data-theme="structure" data-context="Structure">
       <div class="about-text">
         <p class="about-name-line">My name is Yu-Jou. Everdinne is what I call this space.</p>
-        <p>I studied literature and philosophy before I studied data. I don't think of these as different phases — they're the same practice: trying to understand what something actually means, not just what it says.</p>
+        <p>I studied literature and philosophy before I studied data. I don't think of these as different phases — they're the same practice: trying to understand what something actually means, not just what it says. Nobody plans this kind of path. It just keeps making sense in retrospect.</p>
         <p>Right now I'm finishing an MSc in Data Science &amp; AI Strategy at emlyon, on exchange at TU Berlin, and interning in compliance — helping organizations understand what the law is actually asking of them, not just how to satisfy it on paper. These are different questions.</p>
         <p class="about-tagline">The through-line, if there is one: <em>I'm interested in the moments where language stops being descriptive and starts having consequences.</em></p>
-
-        <!-- Languages & Tools -->
-        <div class="tools-grid">
-          <div class="tools-col">
-            <p class="tools-label">Languages spoken</p>
-            <p class="tools-item">Mandarin — native</p>
-            <p class="tools-item">English — fluent</p>
-            <p class="tools-item">French — working</p>
-          </div>
-          <div class="tools-col">
-            <p class="tools-label">Tools used</p>
-            <p class="tools-item">Python · SQL · R</p>
-            <p class="tools-item">HTML · CSS</p>
-            <p class="tools-item">GDPR · DSA frameworks</p>
-          </div>
-        </div>
+        <p class="about-open">Currently open to roles in AI governance, data strategy, and regulatory technology — based in Europe.
+          <a href="assets/cv.pdf" class="cv-link" download>Download CV ↓</a>
+        </p>
       </div>
 
       <div class="about-aside">
@@ -204,7 +230,27 @@
 
     <hr>
 
-    <!-- WRITING -->
+    <!-- TIMELINE -->
+    <section class="timeline-section" id="timeline">
+      <p class="section-label">Path</p>
+      <div class="timeline-track" id="timeline-track">
+        <!-- bands rendered by JS -->
+      </div>
+      <div class="timeline-axis">
+        <span>2021</span>
+        <span>2022</span>
+        <span>2023</span>
+        <span>2024</span>
+        <span>2025</span>
+        <span>2026</span>
+        <span class="tl-now">now</span>
+      </div>
+      <div class="timeline-detail" id="timeline-detail">
+        <span class="timeline-detail-text">hover a band to see more</span>
+      </div>
+    </section>
+
+    <hr>
     <section id="writing" data-theme="meaning" data-context="Meaning">
       <p class="section-label">Writing</p>
 
@@ -281,16 +327,20 @@
   </div>
 
   <!-- PDF MODAL -->
-  <div class="pdf-modal" id="pdf-modal">
+  <div class="pdf-modal" id="pdf-modal" role="dialog" aria-modal="true" aria-label="PDF viewer">
     <div class="pdf-modal-overlay" id="pdf-modal-overlay"></div>
     <div class="pdf-modal-content">
-      <button class="pdf-close" id="pdf-close">&times;</button>
+      <button class="pdf-close" id="pdf-close" aria-label="Close">&times;</button>
       <div class="pdf-header">
         <p class="pdf-intro" id="pdf-intro"></p>
       </div>
       <div class="pdf-frame-wrap">
         <div class="pdf-loading" id="pdf-loading">Loading document…</div>
-        <iframe id="pdf-viewer" src="" title="PDF Document"></iframe>
+        <div class="pdf-fallback" id="pdf-fallback" style="display:none;">
+          <p>Preview unavailable in this browser.</p>
+          <a id="pdf-fallback-link" href="" download class="pdf-fallback-btn">Download PDF instead</a>
+        </div>
+        <iframe id="pdf-viewer" src="" title="PDF Document" tabindex="0"></iframe>
       </div>
       <a id="pdf-download" class="pdf-download-btn" href="" download>Download PDF</a>
     </div>
@@ -467,13 +517,15 @@
     updateDistribution();
 
     // ── PDF Modal ──
-    const modal    = document.getElementById('pdf-modal');
-    const overlay  = document.getElementById('pdf-modal-overlay');
-    const viewer   = document.getElementById('pdf-viewer');
-    const dlBtn    = document.getElementById('pdf-download');
-    const closeBtn = document.getElementById('pdf-close');
-    const pdfIntro = document.getElementById('pdf-intro');
-    const pdfLoading = document.getElementById('pdf-loading');
+    const modal       = document.getElementById('pdf-modal');
+    const overlay     = document.getElementById('pdf-modal-overlay');
+    const viewer      = document.getElementById('pdf-viewer');
+    const dlBtn       = document.getElementById('pdf-download');
+    const closeBtn    = document.getElementById('pdf-close');
+    const pdfIntro    = document.getElementById('pdf-intro');
+    const pdfLoading  = document.getElementById('pdf-loading');
+    const pdfFallback = document.getElementById('pdf-fallback');
+    const pdfFallbackLink = document.getElementById('pdf-fallback-link');
 
     document.querySelectorAll('.work-item[data-pdf]').forEach(item => {
       item.addEventListener('click', () => {
@@ -482,25 +534,45 @@
         viewer.src  = '';
         dlBtn.href  = url;
         pdfIntro.textContent = intro;
-        pdfLoading.style.display = 'flex';
-        viewer.style.opacity = '0';
+        pdfLoading.style.display  = 'flex';
+        pdfFallback.style.display = 'none';
+        viewer.style.opacity      = '0';
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
-        // slight delay then load
+
         setTimeout(() => {
           viewer.src = url;
+          let loaded = false;
+
           viewer.onload = () => {
+            loaded = true;
             pdfLoading.style.display = 'none';
+            pdfFallback.style.display = 'none';
             viewer.style.opacity = '1';
           };
+
+          viewer.onerror = () => {
+            pdfLoading.style.display  = 'none';
+            pdfFallback.style.display = 'flex';
+            pdfFallbackLink.href = url;
+          };
+
+          // Only show fallback if genuinely slow (8s) AND not yet loaded
+          setTimeout(() => {
+            if (!loaded) {
+              pdfLoading.style.display  = 'none';
+              pdfFallback.style.display = 'flex';
+              pdfFallbackLink.href = url;
+            }
+          }, 8000);
         }, 100);
       });
     });
 
     function closeModal() {
       modal.classList.remove('open');
-      viewer.src = '';
-      viewer.style.opacity = '0';
+      viewer.src            = '';
+      viewer.style.opacity  = '0';
       document.body.style.overflow = '';
     }
     closeBtn.addEventListener('click', closeModal);
@@ -538,6 +610,121 @@
       document.getElementById('footer-date').textContent = months[d.getMonth()] + ' ' + d.getFullYear();
     }
     updateFooterDate();
+
+    // ── Color-band timeline ──
+    (function() {
+      const START = 2021;
+      const END   = 2027.5;
+      const SPAN  = END - START;
+
+      // Muted, tonal palette — no clashing
+      const bands = [
+        {
+          label:   'BA · Foreign Languages & Literature',
+          sub:     'Tunghai University · Taichung, Taiwan · GPA 4.16/4.3',
+          from:    2021, to: 2025,
+          color:   '#4a5248',
+          opacity: 0.7,
+          track:   0
+        },
+        {
+          label:   'Linguistic & Cultural Exchange',
+          sub:     'McGill University · Montreal, Canada',
+          from:    2022.5, to: 2022.75,
+          color:   '#4a5248',
+          opacity: 0.9,
+          track:   1
+        },
+        {
+          label:   'Research Assistant · CNRS',
+          sub:     'French National Centre for Scientific Research · Paris',
+          from:    2023.5, to: 2023.75,
+          color:   '#4a5248',
+          opacity: 0.95,
+          track:   1
+        },
+        {
+          label:   'Master · Data Science & AI Strategy',
+          sub:     'emlyon Business School · Paris · in progress',
+          from:    2023.75, to: 2027.5,
+          color:   '#2e3c2e',
+          opacity: 0.65,
+          track:   0
+        },
+        {
+          label:   'Data & AI Architecture · Ekimetrics',
+          sub:     '5-month in-company project · Paris',
+          from:    2024.25, to: 2024.75,
+          color:   '#2e3c2e',
+          opacity: 0.9,
+          track:   1
+        },
+        {
+          label:   'Intern · Trust & Fund',
+          sub:     'DSA / GDPR Compliance · Paris',
+          from:    2025, to: 2025.75,
+          color:   '#38403a',
+          opacity: 0.9,
+          track:   2
+        },
+        {
+          label:   'Exchange · TU Berlin',
+          sub:     'Technical University of Berlin · Berlin',
+          from:    2025.75, to: 2026.25,
+          color:   '#2e3c2e',
+          opacity: 0.95,
+          track:   1
+        },
+        {
+          label:   'Available from mid-2026',
+          sub:     'Open to roles in AI governance, data strategy & regulatory technology',
+          from:    2026.25, to: 2027.5,
+          color:   '#b8a060',
+          opacity: 0.75,
+          track:   2
+        }
+      ];
+
+      const track   = document.getElementById('timeline-track');
+      const detail  = document.getElementById('timeline-detail');
+      const detText = detail.querySelector('.timeline-detail-text');
+      const TRACKS  = 3;
+
+      track.style.height = (TRACKS * 14 + (TRACKS - 1) * 6) + 'px';
+
+      bands.forEach((b, i) => {
+        const el = document.createElement('div');
+        el.className = 'tl-band';
+        const left  = ((b.from - START) / SPAN) * 100;
+        const width = ((b.to   - b.from) / SPAN) * 100;
+        const top   = b.track * 20;
+
+        el.style.cssText = `
+          left: ${left}%;
+          width: ${width}%;
+          top: ${top}px;
+          background: ${b.color};
+          opacity: ${b.opacity};
+        `;
+
+        el.addEventListener('mouseenter', () => {
+          document.querySelectorAll('.tl-band').forEach(x => x.style.opacity = '0.15');
+          el.style.opacity = '1';
+          detText.innerHTML = `<strong>${b.label}</strong> &nbsp;·&nbsp; ${b.sub}`;
+          detail.classList.add('visible');
+        });
+
+        el.addEventListener('mouseleave', () => {
+          document.querySelectorAll('.tl-band').forEach((x, j) => {
+            x.style.opacity = bands[j].opacity;
+          });
+          detText.innerHTML = 'hover a band to see more';
+          detail.classList.remove('visible');
+        });
+
+        track.appendChild(el);
+      });
+    })();
 
     // ── Berlin time ──
     function updateTime() {

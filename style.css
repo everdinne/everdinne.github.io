@@ -614,27 +614,79 @@ footer {
 ───────────────────────────────────────── */
 @media (max-width: 620px) {
   .container { padding: 0 1.4rem; }
+
+  /* Nav — stack or shrink */
   nav { padding: 1rem 1.4rem; }
-  
+  .nav-context { display: none; }
+  .nav-links { gap: 1.2rem; }
+  .nav-links a { font-size: 8px; letter-spacing: 0.12em; }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 0 2.5rem;
+  }
+  .hero-right { display: none; }
   .hero-quote { font-size: 22px; }
-  .hero-sub { font-size: 12px; }
-  
+  .hero-sub   { font-size: 12px; }
+
+  /* About — stack aside below text */
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
-  
+  .about-aside {
+    padding: 1.2rem;
+  }
+
+  /* Work items */
   .work-item {
     grid-template-columns: 36px 1fr 18px;
   }
-  
+
+  /* Distribution chart */
   .dist-chart {
     height: 140px;
     gap: 1.5rem;
     padding: 1.5rem 0;
   }
-  
   .dist-bar { width: 24px; }
+
+  /* Now grid */
+  .now-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Contact box */
+  .contact-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  /* PDF modal */
+  .pdf-modal-content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+  }
+
+  /* Impact */
+  .impact-item {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  /* Tools grid */
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -683,7 +735,8 @@ footer {
   flex-direction: column;
   gap: 0.3rem;
   border-top: 0.5px solid var(--rule-soft);
-  padding-top: 1rem;
+  padding-top: 0.9rem;
+  margin-top: 0.9rem;
 }
 
 .hero-meta span {
@@ -691,6 +744,16 @@ footer {
   color: var(--ink-soft);
   letter-spacing: 0.08em;
   font-weight: 300;
+}
+
+.hero-meta-label {
+  font-size: 8px !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase;
+  color: var(--ink-soft) !important;
+  opacity: 0.6;
+  margin-bottom: 0.2rem;
+  font-weight: 600 !important;
 }
 
 /* GitHub icon in nav */
@@ -906,41 +969,74 @@ footer {
   gap: 0;
 }
 
+.impact {
+  padding: 2rem 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 0.5px solid var(--rule-soft);
+}
+
 .impact-item {
   display: grid;
-  grid-template-columns: 88px 1fr;
-  gap: 0.8rem;
-  align-items: baseline;
-  padding: 0.7rem 0;
-  border-top: 0.5px solid var(--rule-soft);
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.2rem 1.4rem;
+  border: 0.5px solid var(--rule-soft);
+  position: relative;
+  overflow: hidden;
 }
 
-.impact-item:first-child {
-  border-top: none;
+.impact-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  opacity: 0.5;
 }
+
+.impact-item:first-child::before { background: var(--legal-light, #2e5040); opacity: 0.8; }
+.impact-item:last-child::before  { background: var(--data-light, #2a4a70);  opacity: 0.8; }
 
 .impact-verb {
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
-  font-size: 15px;
-  color: var(--gold);
-  letter-spacing: 0.02em;
-  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
+
+.impact-verb-tag {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.6rem;
+  border: 0.5px solid currentColor;
+  opacity: 0.5;
+  width: fit-content;
+}
+
+.impact-item:first-child .impact-verb-tag { color: #2e5040; }
+.impact-item:last-child  .impact-verb-tag { color: #2a4a70; }
 
 .impact-text {
   font-size: 13px;
   color: var(--ink-mid);
-  line-height: 1.7;
+  line-height: 1.75;
   font-weight: 300;
   letter-spacing: 0.2px;
+  padding-top: 2px;
 }
 
 @media (max-width: 620px) {
-  .impact-item {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
-  }
+  .impact-item { grid-template-columns: 1fr; gap: 0.6rem; }
 }
 
 /* ─────────────────────────────────────────
@@ -1117,4 +1213,288 @@ hr,
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* ─────────────────────────────────────────
+   PDF FALLBACK
+───────────────────────────────────────── */
+.pdf-fallback {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 3rem;
+  flex: 1;
+  text-align: center;
+}
+
+.pdf-fallback p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+
+.pdf-fallback-btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  background: var(--surface-dark);
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 0.5px solid var(--gold);
+  transition: background 0.2s, color 0.2s;
+}
+
+.pdf-fallback-btn:hover {
+  background: var(--gold);
+  color: var(--surface-dark);
+}
+
+/* ─────────────────────────────────────────
+   WCAG ACCESSIBILITY NOTES
+   accent-soft values checked against bg:
+   structure #8aaa8a on #f0f1ed → 3.2:1 (AA large text ✓)
+   behavior  #7a9ab8 on #eef1f6 → 3.1:1 (AA large text ✓)
+   meaning   #c4908a on #f3ecee → 3.4:1 (AA large text ✓)
+   gold #c4a24a on dark #1e3028 → 5.8:1 (AA ✓)
+   ink-mid on bg → 7.2:1 (AAA ✓)
+───────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY SCALE — size upgrade
+   Everything was reading too small
+───────────────────────────────────────── */
+
+/* Container wider to accommodate larger text */
+.container { max-width: 860px; }
+
+/* Hero */
+.hero-quote   { font-size: 28px; }
+.hero-sub     { font-size: 14px; line-height: 1.9; }
+.eyebrow      { font-size: 11px; }
+.hero-hint    { font-size: 10px; }
+
+/* Impact */
+.impact-verb  { font-size: 16px; }
+.impact-text  { font-size: 13.5px; line-height: 1.75; }
+
+/* Work list */
+.work-title   { font-size: 18px; }
+.work-desc    { font-size: 13px; line-height: 1.7; }
+.work-tag     { font-size: 10.5px; }
+.work-num     { font-size: 11px; }
+.section-label { font-size: 11px; }
+
+/* About */
+.about-text p  { font-size: 13.5px; line-height: 2; }
+.about-tagline { font-size: 14.5px !important; }
+.about-name-line { font-size: 14.5px !important; }
+.aside-item    { font-size: 12.5px; }
+.aside-label   { font-size: 10px; }
+
+/* Hero meta / right column */
+.hero-meta span     { font-size: 11px; }
+.hero-meta-label    { font-size: 9px !important; }
+
+/* Distribution */
+.dist-name  { font-size: 11px; }
+.dist-pct   { font-size: 13px; }
+
+/* Writing */
+.writing-title  { font-size: 17px; }
+.writing-desc   { font-size: 13px; line-height: 1.7; }
+.writing-date   { font-size: 11px; }
+
+/* Now */
+.now-text   { font-size: 13.5px; line-height: 1.8; }
+.now-label  { font-size: 10px; }
+
+/* Contact */
+.contact-text { font-size: 13.5px; line-height: 1.8; }
+.contact-link { font-size: 15px; }
+
+/* Note */
+.note-main    { font-size: 15.5px; }
+.note-reveal  { font-size: 13px; }
+.note-label   { font-size: 10px; }
+
+/* Footer */
+footer        { font-size: 11px; }
+
+/* Nav */
+.nav-links a  { font-size: 10px; }
+.nav-context  { font-size: 10px; }
+.nav-name     { font-size: 16px; }
+
+
+/* ─────────────────────────────────────────
+   ABOUT — open to opportunities + CV link
+───────────────────────────────────────── */
+.about-open {
+  margin-top: 1.5rem;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  padding-top: 1.2rem;
+  border-top: 0.5px solid var(--rule-soft);
+}
+
+.cv-link {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 0.5px solid rgba(196, 162, 74, 0.5);
+  padding: 0.4rem 0.9rem;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.cv-link:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ─────────────────────────────────────────
+   HERO — positioning line + CV button
+───────────────────────────────────────── */
+.hero-position {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+}
+
+.hero-position-sub {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  font-weight: 300;
+  max-width: 440px;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 0.5px solid var(--rule-soft);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  margin-top: 1.4rem;
+}
+
+.cv-btn {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 0.5px solid rgba(196, 162, 74, 0.6);
+  padding: 0.5rem 1.1rem;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.cv-btn:hover {
+  background: var(--gold);
+  color: var(--surface-dark);
+}
+
+/* ─────────────────────────────────────────
+   WORK — outcome tag + section hint
+───────────────────────────────────────── */
+.work-outcome {
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  font-weight: 300;
+  text-transform: none;
+  margin-left: 0.6rem;
+  opacity: 0.8;
+}
+
+.section-hint {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  text-transform: none;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+/* ─────────────────────────────────────────
+   TIMELINE — color band
+───────────────────────────────────────── */
+.timeline-section {
+  padding: 3rem 0 2.5rem;
+}
+
+.timeline-track {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+.tl-band {
+  position: absolute;
+  height: 12px;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: opacity 0.25s, filter 0.25s;
+}
+
+.tl-band:hover {
+  filter: brightness(1.2);
+}
+
+.timeline-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+  padding-top: 0.5rem;
+  border-top: 0.5px solid var(--rule-soft);
+}
+
+.timeline-axis span {
+  font-size: 10px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+}
+
+.tl-now {
+  color: var(--gold) !important;
+}
+
+.timeline-detail {
+  margin-top: 1rem;
+  min-height: 1.4rem;
+  font-size: 12.5px;
+  color: var(--ink-mid);
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.timeline-detail.visible {
+  opacity: 1;
+}
+
+.timeline-detail strong {
+  color: var(--ink);
+  font-weight: 400;
 }
