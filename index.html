@@ -17,25 +17,31 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-name" href="#">Everdinne</a>
-    <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#writing">Writing</a></li>
-      <li>
-        <a href="https://github.com/" target="_blank" rel="noopener" class="nav-github" aria-label="GitHub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
-        </a>
-      </li>
-    </ul>
+    <a class="nav-name" href="#" id="nav-name">
+      <span class="nav-name-everdinne">Everdinne</span>
+      <span class="nav-name-yujou">Yu-Jou</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="nav-github" aria-label="GitHub">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <span class="nav-context" id="nav-context">Structure — how things hold</span>
+    </div>
   </nav>
 
   <div class="container">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" data-theme="structure" data-context="Structure">
       <div class="hero-left">
         <p class="eyebrow">Berlin — TU Berlin &nbsp;·&nbsp; MSc Data Science &amp; AI Strategy</p>
         <p class="hero-quote" id="hero-quote">
@@ -45,6 +51,9 @@
           I work at the place where legal language meets technical architecture —
           and where neither one alone is enough. I got here by way of literature
           and philosophy, which turns out to be exactly the right preparation.
+        </p>
+        <p class="hero-sub hero-sub-2">
+          Nobody plans this kind of path. It just keeps making sense in retrospect.
         </p>
         <p class="hero-hint">↑ click to read more</p>
       </div>
@@ -62,38 +71,72 @@
       </div>
     </section>
 
+    <!-- IMPACT -->
+    <section class="impact">
+      <div class="impact-item">
+        <span class="impact-verb">Translate</span>
+        <span class="impact-text">regulatory language into something engineers can actually use — which is harder than it sounds.</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-verb">Make visible</span>
+        <span class="impact-text">the gap between what the law assumes and what systems actually do. The gap is usually larger than expected.</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-verb">Build</span>
+        <span class="impact-text">bridges across domains that were never meant to understand each other. Someone has to.</span>
+      </div>
+    </section>
+
     <hr>
 
     <!-- WORK -->
     <section id="work">
       <p class="section-label">Selected work</p>
 
-      <button class="work-item legal" data-domain="legal" data-pdf="assets/reports/gdpr_dsa_report.pdf">
+      <button class="work-item legal" data-domain="legal" data-theme="structure" data-context="Structure"
+        data-pdf="assets/reports/gdpr_dsa_report.pdf"
+        aria-label="Open report: GDPR, DSA, and machine accountability"
+        data-intro="On what it means to hold a system accountable to language written before the system existed."
+        data-desc-structure="Filling the gap between legal obligation and technical reality in EU systems."
+        data-desc-behavior="Where compliance breaks — and why it tends to break in the same places."
+        data-desc-meaning="What it means to hold something accountable when no one is actually deciding.">
         <span class="work-num">01</span>
         <div class="work-body">
           <p class="work-tag">Legal &amp; Compliance</p>
           <p class="work-title"><em>GDPR, DSA,</em> and the question of machine accountability</p>
-          <p class="work-desc">Bridging legal obligation and technical reality for EU regulatory compliance. What the law says, what systems actually do, and the gap between.</p>
+          <p class="work-desc">Filling the gap between legal obligation and technical reality in EU systems.</p>
         </div>
         <span class="work-arrow">↗</span>
       </button>
 
-      <button class="work-item data" data-domain="data" data-pdf="assets/reports/consumer_behavior_report.pdf">
+      <button class="work-item data" data-domain="data" data-theme="behavior" data-context="Behavior"
+        data-pdf="assets/reports/consumer_behavior_report.pdf"
+        aria-label="Open report: What patterns in behavior actually tell us"
+        data-intro="On what it means to model someone — and what gets lost in the abstraction."
+        data-desc-structure="A way of structuring purchase patterns within real-world constraints."
+        data-desc-behavior="Predictive modeling of consumer behavior — and why the model is never the whole story."
+        data-desc-meaning="What it means to turn someone into a pattern — and what quietly drops out.">
         <span class="work-num">02</span>
         <div class="work-body">
           <p class="work-tag">Data Science</p>
           <p class="work-title"><em>What patterns</em> in behavior actually tell us</p>
-          <p class="work-desc">Predictive modeling of consumer behavior — and a note on why the model is never the whole story.</p>
+          <p class="work-desc">Predictive modeling of consumer behavior — and why the model is never the whole story.</p>
         </div>
         <span class="work-arrow">↗</span>
       </button>
 
-      <button class="work-item literature" data-domain="literature" data-pdf="assets/reports/karamazov_analysis.pdf">
+      <button class="work-item literature" data-domain="literature" data-theme="meaning" data-context="Meaning"
+        data-pdf="assets/reports/karamazov_analysis.pdf"
+        aria-label="Open report: Faith, doubt, and The Brothers Karamazov"
+        data-intro="On Ivan Karamazov — who keeps being right about the wrong things, and why that matters."
+        data-desc-structure="A reading of moral structure in The Brothers Karamazov."
+        data-desc-behavior="How Ivan Karamazov's arguments work — and why they keep working on you."
+        data-desc-meaning="On the ethics of certainty — and why being right doesn't resolve it.">
         <span class="work-num">03</span>
         <div class="work-body">
           <p class="work-tag">Literature</p>
           <p class="work-title"><em>Faith, doubt,</em> and The Brothers Karamazov</p>
-          <p class="work-desc">On what Russian literature still has to say about the ethics of certainty — and why Ivan Karamazov keeps being right about the wrong things.</p>
+          <p class="work-desc">A reading of moral structure in The Brothers Karamazov.</p>
         </div>
         <span class="work-arrow">↗</span>
       </button>
@@ -102,11 +145,12 @@
     <hr>
 
     <!-- ABOUT -->
-    <section id="about" class="about-grid">
+    <section id="about" class="about-grid" data-theme="structure" data-context="Structure">
       <div class="about-text">
-        <p>I studied literature and philosophy before I studied data. I don't think of these as different phases of a person — they're the same practice: learning to ask what something actually means, rather than just what it says.</p>
-        <p>Right now I'm finishing an MSc in Data Science &amp; AI Strategy at emlyon, on exchange at TU Berlin, and interning in compliance — helping large companies understand what the law is genuinely asking of them, not just how to satisfy it on paper.</p>
-        <p class="about-tagline">The through-line, if there is one: <em>I'm interested in the places where language becomes consequential.</em></p>
+        <p class="about-name-line">My name is Yu-Jou. Everdinne is what I call this space.</p>
+        <p>I studied literature and philosophy before I studied data. I don't think of these as different phases — they're the same practice: trying to understand what something actually means, not just what it says.</p>
+        <p>Right now I'm finishing an MSc in Data Science &amp; AI Strategy at emlyon, on exchange at TU Berlin, and interning in compliance — helping organizations understand what the law is actually asking of them, not just how to satisfy it on paper. These are different questions.</p>
+        <p class="about-tagline">The through-line, if there is one: <em>I'm interested in the moments where language stops being descriptive and starts having consequences.</em></p>
 
         <!-- Languages & Tools -->
         <div class="tools-grid">
@@ -161,23 +205,25 @@
     <hr>
 
     <!-- WRITING -->
-    <section id="writing">
+    <section id="writing" data-theme="meaning" data-context="Meaning">
       <p class="section-label">Writing</p>
 
-      <div class="writing-item">
+      <div class="writing-item" data-preview="Being in-between is not a failure to arrive. It is its own kind of knowledge.">
         <span class="writing-date">2025 · Berlin</span>
         <div class="writing-body">
           <p class="writing-title">On not knowing what you are yet</p>
-          <p class="writing-desc">A note on being in-between — between disciplines, between cities, between the person you were and the one you're becoming.</p>
+          <p class="writing-desc">A note on being in-between — between disciplines, cities, and versions of yourself. Nobody tells you this is allowed to take time.</p>
         </div>
+        <span class="writing-preview"></span>
       </div>
 
-      <div class="writing-item">
+      <div class="writing-item" data-preview="The law is always a theory of what people owe each other. That's worth taking seriously.">
         <span class="writing-date">2024 · Paris</span>
         <div class="writing-body">
           <p class="writing-title">What compliance actually asks of you</p>
-          <p class="writing-desc">GDPR isn't just a checklist. It's a question about what you believe organizations owe to people. That's a philosophical question before it's a legal one.</p>
+          <p class="writing-desc">GDPR isn't a checklist. It's a position on what organizations owe to people — which is a philosophical question before it's a legal one. Most people skip that part.</p>
         </div>
+        <span class="writing-preview"></span>
       </div>
 
     </section>
@@ -185,7 +231,7 @@
     <hr>
 
     <!-- NOW -->
-    <section class="now-block">
+    <section class="now-block" data-theme="structure" data-context="Structure">
       <p class="section-label">Now</p>
       <div class="now-grid">
         <div class="now-item">
@@ -203,9 +249,18 @@
       </div>
     </section>
 
-    <hr>
+    <!-- CONTACT -->
+    <section class="contact-section">
+      <p class="section-label">Get in touch</p>
+      <div class="contact-box">
+        <p class="contact-text">
+          If something here resonates — or if you're working on something at the intersection of law, data, and systems — I'd like to hear from you.
+        </p>
+        <a href="mailto:you@email.com" class="contact-link">you@email.com</a>
+      </div>
+    </section>
 
-    <!-- NOTE -->
+    <hr>
     <div class="note-block">
       <p class="note-label">A note</p>
       <p class="note-main">
@@ -213,12 +268,13 @@
         Some of it is still unfinished. I think that's honest.
       </p>
       <p class="note-reveal">
-        If you noticed that — you're the kind of reader I was hoping for.
+        If you noticed — you're exactly the kind of reader I was hoping for.
       </p>
     </div>
 
     <footer>
       <span>Everdinne</span>
+      <span id="footer-date" class="footer-date"></span>
       <span id="city-time">Berlin</span>
     </footer>
 
@@ -229,26 +285,150 @@
     <div class="pdf-modal-overlay" id="pdf-modal-overlay"></div>
     <div class="pdf-modal-content">
       <button class="pdf-close" id="pdf-close">&times;</button>
-      <iframe id="pdf-viewer" src="" title="PDF Document"></iframe>
+      <div class="pdf-header">
+        <p class="pdf-intro" id="pdf-intro"></p>
+      </div>
+      <div class="pdf-frame-wrap">
+        <div class="pdf-loading" id="pdf-loading">Loading document…</div>
+        <iframe id="pdf-viewer" src="" title="PDF Document"></iframe>
+      </div>
       <a id="pdf-download" class="pdf-download-btn" href="" download>Download PDF</a>
     </div>
   </div>
 
   <script>
-    // ── Cursor glow ──
+    // ── Cursor glow — requestAnimationFrame ──
     const glow = document.getElementById('cursor-glow');
     const dot  = document.getElementById('cursor-dot');
+    let mouseX = 0, mouseY = 0, rafPending = false;
     document.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top  = e.clientY + 'px';
-      glow.style.opacity = '0.13';
-      dot.style.left = e.clientX + 'px';
-      dot.style.top  = e.clientY + 'px';
-      dot.style.opacity = '0.4';
+      mouseX = e.clientX; mouseY = e.clientY;
+      if (!rafPending) {
+        rafPending = true;
+        requestAnimationFrame(() => {
+          glow.style.left = mouseX + 'px'; glow.style.top = mouseY + 'px'; glow.style.opacity = '0.13';
+          dot.style.left  = mouseX + 'px'; dot.style.top  = mouseY + 'px'; dot.style.opacity  = '0.4';
+          rafPending = false;
+        });
+      }
     });
     document.addEventListener('mouseleave', () => {
-      glow.style.opacity = '0';
-      dot.style.opacity  = '0';
+      glow.style.opacity = '0'; dot.style.opacity = '0';
+    });
+
+    // ── Theme system ──
+    // Three epistemologies. Gold never changes.
+    const themes = {
+      structure: {
+        navBg:       '#1e3028',
+        rule:        '#c4c4c0',
+        ruleSoft:    '#d8d8d4',
+        inkMid:      '#585850',
+        bg:          '#f0f1ed',
+        surfaceText: '#6a9878',
+        accentSoft:  '#8aaa8a',
+      },
+      behavior: {
+        navBg:       '#1a2438',
+        rule:        '#bcc0cc',
+        ruleSoft:    '#d0d4e0',
+        inkMid:      '#525860',
+        bg:          '#eef1f6',
+        surfaceText: '#7f92b0',
+        accentSoft:  '#7a9ab8',
+      },
+      meaning: {
+        navBg:       '#2e1820',
+        rule:        '#c4bcbc',
+        ruleSoft:    '#d8d0d0',
+        inkMid:      '#605050',
+        bg:          '#f3ecee',
+        surfaceText: '#b07f88',
+        accentSoft:  '#c4908a',
+      }
+    };
+
+    const contexts = {
+      structure: 'Structure — how things hold',
+      behavior:  'Behavior — how things move',
+      meaning:   'Meaning — what things imply'
+    };
+
+    const navContext  = document.getElementById('nav-context');
+    let currentTheme  = 'structure';
+    let scrollTheme   = 'structure';
+    let hoverTheme    = null;
+
+    function applyTheme(key) {
+      if (key === currentTheme) return;
+      currentTheme = key;
+      const t    = themes[key];
+      const root = document.documentElement;
+      root.style.setProperty('--surface-dark',  t.navBg);
+      root.style.setProperty('--rule',          t.rule);
+      root.style.setProperty('--rule-soft',     t.ruleSoft);
+      root.style.setProperty('--ink-mid',       t.inkMid);
+      root.style.setProperty('--bg',            t.bg);
+      root.style.setProperty('--surface-text',  t.surfaceText);
+      root.style.setProperty('--accent-soft',   t.accentSoft);
+      // gold stays constant — never touched
+
+      // ── Rewrite work descriptions per epistemology ──
+      document.querySelectorAll('.work-item[data-desc-' + key + ']').forEach(item => {
+        const desc    = item.querySelector('.work-desc');
+        const newText = item.getAttribute('data-desc-' + key);
+        if (desc && newText && desc.textContent !== newText) {
+          desc.style.opacity = '0';
+          setTimeout(() => {
+            desc.textContent  = newText;
+            desc.style.opacity = '1';
+          }, 200);
+        }
+      });
+
+      // ── Update nav context label ──
+      navContext.style.opacity = '0';
+      setTimeout(() => {
+        navContext.textContent  = contexts[key];
+        navContext.style.opacity = '0.5';
+      }, 200);
+    }
+
+    // ── Scroll-driven: section-level (coarser) ──
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+          const theme = entry.target.dataset.theme;
+          if (theme) {
+            scrollTheme = theme;
+            if (!hoverTheme) applyTheme(scrollTheme);
+          }
+        }
+      });
+    }, {
+      threshold: [0.1, 0.3, 0.5],
+      rootMargin: '-20% 0px -40% 0px'
+    });
+
+    document.querySelectorAll('[data-theme]').forEach(el => {
+      // skip work items — handled by hover
+      if (!el.classList.contains('work-item')) {
+        sectionObserver.observe(el);
+      }
+    });
+
+    // ── Hover-driven: work item level (finer) ──
+    // When hovering a specific work item, shift to that item's epistemology
+    document.querySelectorAll('.work-item[data-theme]').forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        hoverTheme = item.dataset.theme;
+        applyTheme(hoverTheme);
+      });
+      item.addEventListener('mouseleave', () => {
+        hoverTheme = null;
+        // return to what scroll says
+        applyTheme(scrollTheme);
+      });
     });
 
     // ── Hero quote cycle ──
@@ -269,50 +449,95 @@
     // ── Auto-calculate distribution ──
     function updateDistribution() {
       const items = document.querySelectorAll('.work-item[data-domain]');
-      const counts = { legal: 0, data: 0, literature: 0 };
+      const counts = {};
       items.forEach(item => {
-        const d = item.getAttribute('data-domain');
-        if (d in counts) counts[d]++;
+        const d = item.dataset.domain;
+        counts[d] = (counts[d] || 0) + 1;
       });
       const total = Object.values(counts).reduce((a, b) => a + b, 0);
       if (total === 0) return;
       Object.keys(counts).forEach(domain => {
-        const pct = Math.round((counts[domain] / total) * 100);
-        const bar = document.querySelector(`.dist-bar.${domain}`);
+        const pct   = Math.round((counts[domain] / total) * 100);
+        const bar   = document.querySelector(`.dist-bar.${domain}`);
         const pctEl = document.querySelector(`.dist-item.${domain} .dist-pct`);
-        if (bar) bar.style.setProperty('--bar-height', pct + '%');
+        if (bar)   bar.style.setProperty('--bar-height', pct + '%');
         if (pctEl) pctEl.textContent = pct + '%';
       });
     }
     updateDistribution();
 
     // ── PDF Modal ──
-    const modal       = document.getElementById('pdf-modal');
-    const overlay     = document.getElementById('pdf-modal-overlay');
-    const viewer      = document.getElementById('pdf-viewer');
-    const dlBtn       = document.getElementById('pdf-download');
-    const closeBtn    = document.getElementById('pdf-close');
+    const modal    = document.getElementById('pdf-modal');
+    const overlay  = document.getElementById('pdf-modal-overlay');
+    const viewer   = document.getElementById('pdf-viewer');
+    const dlBtn    = document.getElementById('pdf-download');
+    const closeBtn = document.getElementById('pdf-close');
+    const pdfIntro = document.getElementById('pdf-intro');
+    const pdfLoading = document.getElementById('pdf-loading');
 
     document.querySelectorAll('.work-item[data-pdf]').forEach(item => {
       item.addEventListener('click', () => {
-        const url = item.getAttribute('data-pdf');
-        viewer.src = url;
-        dlBtn.href = url;
+        const url   = item.getAttribute('data-pdf');
+        const intro = item.getAttribute('data-intro') || '';
+        viewer.src  = '';
+        dlBtn.href  = url;
+        pdfIntro.textContent = intro;
+        pdfLoading.style.display = 'flex';
+        viewer.style.opacity = '0';
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
+        // slight delay then load
+        setTimeout(() => {
+          viewer.src = url;
+          viewer.onload = () => {
+            pdfLoading.style.display = 'none';
+            viewer.style.opacity = '1';
+          };
+        }, 100);
       });
     });
 
     function closeModal() {
       modal.classList.remove('open');
       viewer.src = '';
+      viewer.style.opacity = '0';
       document.body.style.overflow = '';
     }
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ── Writing preview hover ──
+    document.querySelectorAll('.writing-item[data-preview]').forEach(item => {
+      const preview = item.querySelector('.writing-preview');
+      const text    = item.getAttribute('data-preview');
+      item.addEventListener('mouseenter', () => {
+        preview.textContent = '"' + text + '"';
+        preview.classList.add('visible');
+      });
+      item.addEventListener('mouseleave', () => preview.classList.remove('visible'));
     });
+
+    // ── Nav name hover: Everdinne → Yu-Jou ──
+    const navName       = document.getElementById('nav-name');
+    const everdinneSpan = navName.querySelector('.nav-name-everdinne');
+    const yujouSpan     = navName.querySelector('.nav-name-yujou');
+    navName.addEventListener('mouseenter', () => {
+      everdinneSpan.style.opacity = '0'; everdinneSpan.style.transform = 'translateY(-4px)';
+      setTimeout(() => { yujouSpan.style.opacity = '1'; yujouSpan.style.transform = 'translateY(0)'; }, 150);
+    });
+    navName.addEventListener('mouseleave', () => {
+      yujouSpan.style.opacity = '0'; yujouSpan.style.transform = 'translateY(4px)';
+      setTimeout(() => { everdinneSpan.style.opacity = '1'; everdinneSpan.style.transform = 'translateY(0)'; }, 150);
+    });
+
+    // ── Footer date ──
+    function updateFooterDate() {
+      const d = new Date();
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      document.getElementById('footer-date').textContent = months[d.getMonth()] + ' ' + d.getFullYear();
+    }
+    updateFooterDate();
 
     // ── Berlin time ──
     function updateTime() {

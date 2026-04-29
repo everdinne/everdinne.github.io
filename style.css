@@ -55,6 +55,7 @@ body {
   color: var(--ink);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 800ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ── Cursor effects — subtle glow + dot ── */
@@ -111,38 +112,47 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-name {
-  font-family: 'IM Fell English', serif;
-  font-size: 15px;
-  letter-spacing: 0.12em;
-  color: var(--gold);
-  text-decoration: none;
-  transition: color 0.25s;
-}
-
-.nav-name:hover {
-  color: #e8c87a;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--surface-text);
+  color: var(--gold);
   text-decoration: none;
-  transition: color 0.25s;
+  opacity: 1;
+  transition: opacity 0.25s;
 }
 
 .nav-links a:hover {
+  opacity: 0.7;
+}
+
+.nav-context {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--gold);
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  margin-left: 2rem;
+  padding-left: 2rem;
+  border-left: 0.5px solid rgba(196, 162, 74, 0.25);
 }
 
 /* ─────────────────────────────────────────
@@ -664,9 +674,9 @@ footer {
   font-weight: 400;
 }
 
-.htag.legal { background: var(--legal); color: #8aaa8a; }
-.htag.data  { background: var(--data);  color: #7a9ab8; }
-.htag.lit   { background: var(--lit);   color: #c4908a; }
+.htag.legal { background: var(--legal); color: var(--gold); }
+.htag.data  { background: var(--data);  color: var(--gold); }
+.htag.lit   { background: var(--lit);   color: var(--gold); }
 
 .hero-meta {
   display: flex;
@@ -726,11 +736,13 @@ footer {
 .writing-item {
   display: grid;
   grid-template-columns: 100px 1fr;
+  grid-template-rows: auto auto;
   gap: 1.2rem;
   align-items: start;
   padding: 1.4rem 0;
   border-bottom: 0.5px solid var(--rule-soft);
   cursor: default;
+  position: relative;
   transition: padding-left 0.2s;
 }
 
@@ -795,4 +807,314 @@ footer {
 .now-text em {
   font-style: italic;
   color: var(--ink);
+}
+
+
+/* ─────────────────────────────────────────
+   NAV NAME — Everdinne / Yu-Jou hover swap
+───────────────────────────────────────── */
+.nav-name {
+  position: relative;
+  display: inline-block;
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-name-everdinne,
+.nav-name-yujou {
+  display: block;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.nav-name-yujou {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(4px);
+  white-space: nowrap;
+  color: #e8c87a;
+}
+
+/* ─────────────────────────────────────────
+   ABOUT — Yu-Jou name line
+───────────────────────────────────────── */
+.about-name-line {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 14px !important;
+  color: var(--ink) !important;
+  margin-bottom: 1.5rem !important;
+  letter-spacing: 0.01em;
+  opacity: 0.75;
+}
+
+/* ─────────────────────────────────────────
+   WRITING — hover preview quote
+───────────────────────────────────────── */
+.writing-preview {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--gold);
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.3s ease;
+  pointer-events: none;
+  padding: 0 0 0 calc(100px + 1.2rem);
+  letter-spacing: 0.01em;
+  grid-column: 1 / -1;
+}
+
+.writing-preview.visible {
+  opacity: 1;
+  max-height: 60px;
+  padding: 0.4rem 0 0.2rem calc(100px + 1.2rem);
+}
+
+/* ─────────────────────────────────────────
+   FOOTER — three column with date
+───────────────────────────────────────── */
+.footer-date {
+  font-size: 9px;
+  color: var(--ink-soft);
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+
+
+/* work-item needs position relative for border-left transitions */
+.work-item {
+  position: relative;
+  overflow: visible;
+}
+
+/* ─────────────────────────────────────────
+   IMPACT SECTION
+───────────────────────────────────────── */
+.impact {
+  padding: 2.5rem 0 3rem;
+  border-bottom: 0.5px solid var(--rule-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.impact-item {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  border-top: 0.5px solid var(--rule-soft);
+}
+
+.impact-item:first-child {
+  border-top: none;
+}
+
+.impact-verb {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.impact-text {
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 620px) {
+  .impact-item {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
+
+/* ─────────────────────────────────────────
+   SCROLL-DRIVEN THEME TRANSITIONS
+   Three layers, three speeds
+───────────────────────────────────────── */
+
+/* Layer 1 — space (slowest): nav handled above */
+.about-aside {
+  transition:
+    background-color 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Layer 2 — structure (medium) */
+hr,
+.work-item,
+.writing-item,
+.dist-chart {
+  transition:
+    border-color 500ms ease;
+}
+
+/* Layer 3 — text (fastest) */
+.work-desc,
+.hero-sub,
+.about-text p,
+.now-text,
+.writing-desc {
+  transition:
+    color 400ms ease;
+}
+
+
+
+/* ─────────────────────────────────────────
+   HERO — second paragraph spacing
+───────────────────────────────────────── */
+.hero-sub-2 {
+  margin-top: 1rem;
+}
+
+/* ─────────────────────────────────────────
+   DIST PCT — hover only
+───────────────────────────────────────── */
+.dist-pct {
+  font-size: 12px;
+  color: var(--ink);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dist-item:hover .dist-pct {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────
+   PDF MODAL — intro + loading state
+───────────────────────────────────────── */
+.pdf-header {
+  padding: 1rem 1.5rem 0;
+  border-bottom: 0.5px solid var(--rule-soft);
+}
+
+.pdf-intro {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-mid);
+  padding-bottom: 0.8rem;
+  min-height: 2rem;
+}
+
+.pdf-frame-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--bg);
+}
+
+#pdf-viewer {
+  flex: 1;
+  border: none;
+  background: white;
+  transition: opacity 0.3s ease;
+}
+
+/* ─────────────────────────────────────────
+   REDUCE MOTION — accessibility
+───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   MOBILE — disable cursor glow
+───────────────────────────────────────── */
+@media (hover: none) {
+  .cursor-glow,
+  .cursor-dot {
+    display: none;
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   WORK DESC — interpretation transition
+───────────────────────────────────────── */
+.work-desc {
+  transition: opacity 0.2s ease, color 400ms ease;
+}
+
+/* ─────────────────────────────────────────
+   CONTACT SECTION
+───────────────────────────────────────── */
+.contact-section {
+  padding: 3rem 0 3.5rem;
+}
+
+.contact-box {
+  border: 0.5px solid var(--rule);
+  padding: 2rem 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contact-text {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--ink-mid);
+  font-weight: 300;
+  max-width: 420px;
+}
+
+.contact-link {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 0.5px solid rgba(196, 162, 74, 0.4);
+  padding-bottom: 2px;
+  flex-shrink: 0;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.contact-link:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+@media (max-width: 620px) {
+  .contact-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
