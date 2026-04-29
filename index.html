@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Everdinne</title>
+  <title>Everdinne — Yu-Jou | Data & AI Strategy · Regulatory Technology</title>
+  <meta name="description" content="Yu-Jou (Everdinne) — Master in Data Science & AI Strategy at emlyon. Working at the intersection of GDPR/DSA compliance, AI governance, and machine learning. Based in Paris & Berlin.">
+  <meta property="og:title" content="Everdinne — Yu-Jou">
+  <meta property="og:description" content="Data & AI Strategy · Regulatory Technology · EU Compliance. Based in Paris & Berlin.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1e3028">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -43,20 +48,15 @@
     <!-- HERO -->
     <section class="hero" data-theme="structure" data-context="Structure">
       <div class="hero-left">
-        <p class="eyebrow">Berlin — TU Berlin &nbsp;·&nbsp; MSc Data Science &amp; AI Strategy</p>
+        <p class="eyebrow">Berlin — TU Berlin &nbsp;·&nbsp; Master in Data Science &amp; AI Strategy</p>
         <p class="hero-quote" id="hero-quote">
           The things that resist being named are usually the ones worth examining.
         </p>
         <p class="hero-position">
           Data &amp; AI Strategy · Regulatory Technology · EU Compliance
         </p>
-        <p class="hero-position-sub">
-          MSc in Data Science &amp; AI Strategy, currently working on GDPR/DSA compliance at the intersection of legal and technical teams. Based in Paris &amp; Berlin.
-        </p>
         <p class="hero-sub">
-          I work at the place where legal language meets technical architecture —
-          and where neither one alone is enough. I got here by way of literature
-          and philosophy, which turns out to be exactly the right preparation.
+          Master in Data Science &amp; AI Strategy at emlyon, currently working on GDPR/DSA compliance at the intersection of legal and technical teams — and building ML fluency on the side. Based in Paris &amp; Berlin. I got here by way of literature and philosophy, which turns out to be exactly the right preparation.
         </p>
         <div class="hero-actions">
           <a href="assets/cv.pdf" class="cv-btn" download>Download CV ↓</a>
@@ -94,19 +94,33 @@
 
     <!-- IMPACT -->
     <section class="impact">
-      <div class="impact-item">
-        <div class="impact-verb">
-          Legal &amp; Compliance
-          <span class="impact-verb-tag">EU · GDPR · DSA</span>
+      <div class="impact-anno">
+        <div class="impact-anno-left">
+          <div class="impact-anno-num">01</div>
+          <div class="impact-anno-domain legal">Legal &amp;<br>Compliance</div>
         </div>
-        <p class="impact-text">Working with legal and technical teams to translate GDPR/DSA obligations into system-level decisions — and identifying where compliance breaks under real implementation.</p>
-      </div>
-      <div class="impact-item">
-        <div class="impact-verb">
-          Machine Learning
-          <span class="impact-verb-tag">Python · Scikit-learn</span>
+        <div class="impact-anno-right">
+          <p class="impact-text">Working with legal and technical teams to translate GDPR/DSA obligations into system-level decisions — and identifying where compliance breaks under real implementation.</p>
+          <div class="impact-chips">
+            <span class="impact-chip">GDPR</span>
+            <span class="impact-chip">DSA</span>
+            <span class="impact-chip">Trust &amp; Fund</span>
+            <span class="impact-chip">EU Regulation</span>
+          </div>
         </div>
-        <p class="impact-text">Building foundational ML fluency — classification, regression, ensemble methods, end-to-end pipelines — with a focus on how models behave inside regulated systems.</p>
+        <div class="impact-anno-left impact-anno-left--b">
+          <div class="impact-anno-num">02</div>
+          <div class="impact-anno-domain data">Machine<br>Learning</div>
+        </div>
+        <div class="impact-anno-right impact-anno-right--b">
+          <p class="impact-text">Building foundational ML fluency — classification, regression, ensemble methods — with a focus on how models behave inside regulated systems.</p>
+          <div class="impact-chips">
+            <span class="impact-chip">Python</span>
+            <span class="impact-chip">Scikit-learn</span>
+            <span class="impact-chip">Pipelines</span>
+            <span class="impact-chip">emlyon</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -116,6 +130,22 @@
     <section id="work">
       <p class="section-label">Selected work <span class="section-hint">— descriptions shift as you read</span></p>
 
+      <button class="work-item data" data-domain="data" data-theme="behavior" data-context="Behavior"
+        data-pdf="assets/reports/ekimetrics_report.pdf"
+        aria-label="Open report: Ekimetrics M&M Technology Integration"
+        data-intro="On what it takes to make systems that were never designed to talk to each other actually work together."
+        data-desc-structure="A technical integration roadmap for converging MMM, CDP, and AI platforms across business units."
+        data-desc-behavior="Where data architecture decisions become business decisions — and how to map that transition."
+        data-desc-meaning="What it means to build infrastructure that has to survive the people who designed it.">
+        <span class="work-num">01</span>
+        <div class="work-body">
+          <p class="work-tag">Data &amp; AI Architecture <span class="work-outcome">Technology &amp; Data Integration Lead · 5-month project · Ekimetrics</span></p>
+          <p class="work-title"><em>MMM, CDP, AI</em> — a technical integration strategy</p>
+          <p class="work-desc">Architecture, roadmap, and privacy compliance across converging platforms — bridging data teams, legal constraints, and business requirements.</p>
+        </div>
+        <span class="work-arrow">↗</span>
+      </button>
+
       <button class="work-item legal" data-domain="legal" data-theme="structure" data-context="Structure"
         data-pdf="assets/reports/gdpr_dsa_report.pdf"
         aria-label="Open report: GDPR, DSA, and machine accountability"
@@ -123,9 +153,9 @@
         data-desc-structure="Filling the gap between legal obligation and technical reality in EU systems."
         data-desc-behavior="Where compliance breaks — and why it tends to break in the same places."
         data-desc-meaning="What it means to hold something accountable when no one is actually deciding.">
-        <span class="work-num">01</span>
+        <span class="work-num">02</span>
         <div class="work-body">
-          <p class="work-tag">Legal &amp; Compliance <span class="work-outcome">Internship project · Trust &amp; Fund</span></p>
+          <p class="work-tag">Legal &amp; Compliance <span class="work-outcome">Internship · Trust &amp; Fund</span></p>
           <p class="work-title"><em>GDPR, DSA,</em> and the question of machine accountability</p>
           <p class="work-desc">Filling the gap between legal obligation and technical reality in EU systems.</p>
         </div>
@@ -139,27 +169,11 @@
         data-desc-structure="A way of structuring purchase patterns within real-world constraints."
         data-desc-behavior="Predictive modeling of consumer behavior — and why the model is never the whole story."
         data-desc-meaning="What it means to turn someone into a pattern — and what quietly drops out.">
-        <span class="work-num">02</span>
+        <span class="work-num">03</span>
         <div class="work-body">
           <p class="work-tag">Data Science <span class="work-outcome">MSc coursework · emlyon</span></p>
           <p class="work-title"><em>What patterns</em> in behavior actually tell us</p>
           <p class="work-desc">Predictive modeling of consumer behavior — and why the model is never the whole story.</p>
-        </div>
-        <span class="work-arrow">↗</span>
-      </button>
-
-      <button class="work-item data" data-domain="data" data-theme="behavior" data-context="Behavior"
-        data-pdf="assets/reports/ekimetrics_report.pdf"
-        aria-label="Open report: Ekimetrics M&M Technology Integration"
-        data-intro="On what it takes to make systems that were never designed to talk to each other actually work together."
-        data-desc-structure="A technical integration roadmap for converging MMM, CDP, and AI platforms across business units."
-        data-desc-behavior="Where data architecture decisions become business decisions — and how to map that transition."
-        data-desc-meaning="What it means to build infrastructure that has to survive the people who designed it.">
-        <span class="work-num">03</span>
-        <div class="work-body">
-          <p class="work-tag">Data &amp; AI Architecture <span class="work-outcome">5-month in-company project · Ekimetrics</span></p>
-          <p class="work-title"><em>MMM, CDP, AI</em> — a technical integration strategy</p>
-          <p class="work-desc">Technology &amp; Data Integration Lead — architecture, roadmap, and privacy compliance across converging platforms.</p>
         </div>
         <span class="work-arrow">↗</span>
       </button>
@@ -173,7 +187,7 @@
         data-desc-meaning="On the ethics of certainty — and why being right doesn't resolve it.">
         <span class="work-num">04</span>
         <div class="work-body">
-          <p class="work-tag">Literature <span class="work-outcome">BA thesis · NTU</span></p>
+          <p class="work-tag">Literature <span class="work-outcome">BA thesis · Tunghai University</span></p>
           <p class="work-title"><em>Faith, doubt,</em> and The Brothers Karamazov</p>
           <p class="work-desc">A reading of moral structure in The Brothers Karamazov.</p>
         </div>
@@ -250,15 +264,24 @@
       </div>
     </section>
 
-    <hr>
+    <h<hr>
     <section id="writing" data-theme="meaning" data-context="Meaning">
       <p class="section-label">Writing</p>
 
-      <div class="writing-item" data-preview="Being in-between is not a failure to arrive. It is its own kind of knowledge.">
+      <div class="writing-item" data-preview="I'm not interested in conclusions. I'm interested in the moment where both things are still true.">
         <span class="writing-date">2025 · Berlin</span>
         <div class="writing-body">
-          <p class="writing-title">On not knowing what you are yet</p>
-          <p class="writing-desc">A note on being in-between — between disciplines, cities, and versions of yourself. Nobody tells you this is allowed to take time.</p>
+          <p class="writing-title">The point is not the end</p>
+          <p class="writing-desc">On balance, and the place that can only exist because both forces are pulling equally.</p>
+          <div class="writing-full">
+            <p>I keep coming back to this idea: that the opposite of everything-is-different and the opposite of everything-is-the-same might be the same place.</p>
+            <p>Not because distinctions don't matter. They do. But at a certain point, if you push far enough in either direction, you end up somewhere that looks like the other side. Maximum chaos and maximum order both produce something that feels like stillness.</p>
+            <p>I don't think the goal is to reach that stillness by dissolving everything into it. I think the goal is to find the point where both sides are still true, where you can feel the difference and the sameness at the same time without needing to resolve them. That point is not a compromise though; it's more like a place that can only exist because both forces are pulling equally.</p>
+            <p>I studied business and I studied literature and philosophy, and I've noticed something: the further I go into one, the further it seems to take me from the other, but also, strangely, closer to it. Commerce brings me closer to how the world actually works and further from why it works that way. Philosophy reverses that. I don't think either direction is wrong. I think the interesting place is the one you can only stand in if you've gone far enough in both.</p>
+            <p>This isn't a position I arrived at by being taught it. It came from not being understood, which is its own kind of education. When the world doesn't quite register what you're doing or why, you start having to figure it out yourself. That's uncomfortable. It's also, I think, how you actually learn what you believe.</p>
+            <p>I'm not interested in conclusions. I'm interested in the moment where both things are still true.</p>
+          </div>
+          <button class="writing-toggle" aria-expanded="false">Read <span>↓</span></button>
         </div>
         <span class="writing-preview"></span>
       </div>
@@ -578,6 +601,16 @@
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ── Writing toggle ──
+    document.querySelectorAll('.writing-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const full = btn.previousElementSibling;
+        const open = full.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+        btn.childNodes[0].textContent = open ? 'Close ' : 'Read ';
+      });
+    });
 
     // ── Writing preview hover ──
     document.querySelectorAll('.writing-item[data-preview]').forEach(item => {

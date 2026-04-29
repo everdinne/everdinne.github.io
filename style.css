@@ -340,11 +340,11 @@ nav {
 }
 
 .about-tagline {
-  margin-top: 1.8rem !important;
+  margin-top: 1.8rem;
   font-family: 'IM Fell English', serif;
   font-style: italic;
-  font-size: 14px !important;
-  color: var(--ink) !important;
+  font-size: 14px;
+  color: var(--ink);
 }
 
 .about-tagline em {
@@ -627,7 +627,12 @@ footer {
     gap: 2rem;
     padding: 3rem 0 2.5rem;
   }
-  .hero-right { display: none; }
+  .hero-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  .hero-tag-stack { display: none; }
   .hero-quote { font-size: 22px; }
   .hero-sub   { font-size: 12px; }
 
@@ -747,13 +752,13 @@ footer {
 }
 
 .hero-meta-label {
-  font-size: 8px !important;
-  letter-spacing: 0.16em !important;
+  font-size: 8px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-soft) !important;
+  color: var(--ink-soft);
   opacity: 0.6;
   margin-bottom: 0.2rem;
-  font-weight: 600 !important;
+  font-weight: 600;
 }
 
 /* GitHub icon in nav */
@@ -908,9 +913,9 @@ footer {
 .about-name-line {
   font-family: 'IM Fell English', serif;
   font-style: italic;
-  font-size: 14px !important;
-  color: var(--ink) !important;
-  margin-bottom: 1.5rem !important;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
   letter-spacing: 0.01em;
   opacity: 0.75;
 }
@@ -971,60 +976,52 @@ footer {
 
 .impact {
   padding: 2rem 0 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   border-bottom: 0.5px solid var(--rule-soft);
 }
 
-.impact-item {
+.impact-anno {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 1.5rem;
-  align-items: start;
-  padding: 1.2rem 1.4rem;
-  border: 0.5px solid var(--rule-soft);
-  position: relative;
-  overflow: hidden;
+  grid-template-columns: 120px 1fr;
+  gap: 0;
 }
 
-.impact-item::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: var(--gold);
-  opacity: 0.5;
+.impact-anno-left {
+  padding: 1.4rem 1.2rem 1.4rem 0;
+  border-right: 2px solid var(--gold-pale, #b5983e);
+  border-bottom: 0.5px solid var(--rule-soft);
 }
 
-.impact-item:first-child::before { background: var(--legal-light, #2e5040); opacity: 0.8; }
-.impact-item:last-child::before  { background: var(--data-light, #2a4a70);  opacity: 0.8; }
+.impact-anno-left--b {
+  border-top: 0.5px solid var(--rule-soft);
+}
 
-.impact-verb {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--ink);
+.impact-anno-num {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 38px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.impact-anno-domain {
+  font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  line-height: 1.5;
 }
 
-.impact-verb-tag {
-  display: inline-block;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  padding: 0.25rem 0.6rem;
-  border: 0.5px solid currentColor;
-  opacity: 0.5;
-  width: fit-content;
+.impact-anno-domain.legal { color: var(--legal-light, #2e5040); }
+.impact-anno-domain.data  { color: var(--data-light, #2a4a70); }
+
+.impact-anno-right {
+  padding: 1.4rem 0 1.4rem 1.8rem;
+  border-bottom: 0.5px solid var(--rule-soft);
 }
 
-.impact-item:first-child .impact-verb-tag { color: #2e5040; }
-.impact-item:last-child  .impact-verb-tag { color: #2a4a70; }
+.impact-anno-right--b {
+  border-top: 0.5px solid var(--rule-soft);
+}
 
 .impact-text {
   font-size: 13px;
@@ -1032,11 +1029,27 @@ footer {
   line-height: 1.75;
   font-weight: 300;
   letter-spacing: 0.2px;
-  padding-top: 2px;
+  margin-bottom: 0.8rem;
+}
+
+.impact-chips {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.impact-chip {
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  background: var(--rule-soft);
+  color: var(--ink-soft);
+  font-weight: 300;
 }
 
 @media (max-width: 620px) {
-  .impact-item { grid-template-columns: 1fr; gap: 0.6rem; }
+  .impact-anno { grid-template-columns: 80px 1fr; }
+  .impact-anno-num { font-size: 28px; }
 }
 
 /* ─────────────────────────────────────────
@@ -1291,14 +1304,14 @@ hr,
 
 /* About */
 .about-text p  { font-size: 13.5px; line-height: 2; }
-.about-tagline { font-size: 14.5px !important; }
-.about-name-line { font-size: 14.5px !important; }
+.about-tagline { font-size: 14.5px; }
+.about-name-line { font-size: 14.5px; }
 .aside-item    { font-size: 12.5px; }
 .aside-label   { font-size: 10px; }
 
 /* Hero meta / right column */
 .hero-meta span     { font-size: 11px; }
-.hero-meta-label    { font-size: 9px !important; }
+.hero-meta-label    { font-size: 9px; }
 
 /* Distribution */
 .dist-name  { font-size: 11px; }
@@ -1477,17 +1490,18 @@ footer        { font-size: 11px; }
 }
 
 .tl-now {
-  color: var(--gold) !important;
+  color: var(--gold);
 }
 
 .timeline-detail {
-  margin-top: 1rem;
-  min-height: 1.4rem;
+  margin-top: 0.8rem;
+  min-height: 2rem;
   font-size: 12.5px;
   color: var(--ink-mid);
   font-weight: 300;
   opacity: 0;
-  transition: opacity 0.25s;
+  transition: opacity 0.3s ease;
+  line-height: 1.5;
 }
 
 .timeline-detail.visible {
@@ -1497,4 +1511,55 @@ footer        { font-size: 11px; }
 .timeline-detail strong {
   color: var(--ink);
   font-weight: 400;
+}
+
+
+/* ─────────────────────────────────────────
+   WRITING — expandable full text
+───────────────────────────────────────── */
+.writing-full {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.writing-full.open {
+  max-height: 2000px;
+}
+
+.writing-full p {
+  font-size: 13.5px;
+  line-height: 1.95;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+.writing-full p:first-child {
+  margin-top: 0.8rem;
+}
+
+.writing-toggle {
+  margin-top: 0.8rem;
+  background: none;
+  border: none;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+
+.writing-toggle:hover { opacity: 0.7; }
+
+.writing-toggle span {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.writing-toggle[aria-expanded="true"] span {
+  transform: rotate(180deg);
 }
