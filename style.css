@@ -1,187 +1,798 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
+/* ─────────────────────────────────────────
+   EVERDINNE — style.css
+   Old money aesthetic with data visualization
+───────────────────────────────────────── */
 
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Inter:wght@300;400&display=swap');
+
+/* ── Design Tokens ── */
 :root {
-    --primary-dark: #721817;    /* Dark Theme Base #0a1a2f #143109 #721817*/
-    --accent-gold: #c5a059;     /* Branding Accent (Gold/Brass) */
-    --paper-white: #fdfdfc;     /* Background Tone (Paper-like) */
-    --text-main: #2c2c2c;       /* Main Content Text Color */
+  /* Base palette */
+  --bg:           #f0f0ec;      /* stone white / cold base */
+  --ink:          #141412;      /* deep ink */
+  --ink-mid:      #585850;      /* secondary text */
+  --ink-soft:     #909088;      /* tertiary / labels */
+  
+  /* Lines & rules */
+  --rule:         #c4c4c0;
+  --rule-soft:    #d8d8d4;
+  
+  /* Gold accent — old money brass */
+  --gold:         #c4a24a;
+  --gold-dim:     #a88a2a;
+  
+  /* Domain colours */
+  --legal:        #1e3028;      /* deep forest green */
+  --legal-light:  #2e5040;
+  --data:         #1e3058;      /* midnight blue */
+  --data-light:   #2a4a70;
+  --lit:          #501828;      /* dark wine */
+  --lit-light:    #6a3040;
+  
+  /* Surface dark (nav, aside) */
+  --surface-dark: #1e3028;
+  --surface-text: #6a9878;
 }
 
-/* All Section STYLES */
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Inter', sans-serif; /* Default body font */
-    background-color: var(--paper-white);
-    color: var(--text-main);
-    line-height: 1.6;
-    margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Unite background color for all sections to remove visual gaps */
-body, section, .bg-light {
-    background-color: var(--paper-white) !important;
+/* ── Cursor effects — subtle glow + dot ── */
+.cursor-glow {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+  filter: blur(40px);
+  transition: opacity 0.3s;
 }
 
-/* General section spacing */
-section {
-    padding-top: 100px !important;
-    padding-bottom: 100px !important;
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: opacity 0.3s;
 }
 
-/* Typography Hierarchy */
-h1, h2, .navbar-brand {
-    font-family: 'Playfair Display', serif; /* Elegant Serif for headings */
+/* ── Layout container ── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
 }
 
-/* Utility classes for secondary text */
-.text-secondary {
-    color: #6c757d !important;
+/* ── Dividers ── */
+hr {
+  border: none;
+  border-top: 0.5px solid var(--rule-soft);
+  margin: 0;
 }
 
-.italic {
-    font-style: italic;
+/* ─────────────────────────────────────────
+   NAVIGATION
+───────────────────────────────────────── */
+nav {
+  background: var(--surface-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* NAVIGATION BAR (Top Menu) */
-.navbar {
-    background-color: var(--primary-dark) !important;
-    border-bottom: 2px solid var(--accent-gold) !important;
-    padding: 1rem 0; 
+.nav-name {
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.25s;
 }
 
-.navbar-brand {
-    color: var(--accent-gold) !important;
-    letter-spacing: 2px;
-    font-size: 1.5rem;
+.nav-name:hover {
+  color: #e8c87a;
 }
 
-.nav-link {
-    color: var(--accent-gold) !important;
-    letter-spacing: 1px;
-    font-size: 0.8rem;
-    text-transform: uppercase; 
-    transition: color 0.3s ease;
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
 }
 
-.nav-link:hover {
-    color: white !important;
+.nav-links a {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--surface-text);
+  text-decoration: none;
+  transition: color 0.25s;
 }
 
-/* HERO SECTION (Intro Area) */
-h1 {
-    font-size: 2.5rem !important; 
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+.nav-links a:hover {
+  color: var(--gold);
 }
 
-/* DATA REPORTS SECTION */
-#reports h2 {
-    font-size: 1.8rem !important; 
-    font-weight: 500; 
-    color: var(--primary-dark);
-    margin-bottom: 3rem !important;
-    position: relative;
-    padding-bottom: 15px;
+/* ─────────────────────────────────────────
+   HERO SECTION
+───────────────────────────────────────── */
+.hero {
+  padding: 4.5rem 0 4rem;
 }
 
-/* Decorative gold line under the section heading */
-#reports h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 1px;
-    background-color: var(--accent-gold);
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
 }
 
-/* Portfolio Card Styling */
-.card {
-    background-color: white; 
-    border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
-    transition: transform 0.3s ease;
+.hero-quote {
+  font-family: 'IM Fell English', serif;
+  font-size: 26px;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--ink);
+  max-width: 520px;
+  margin-bottom: 1.8rem;
+  cursor: pointer;
+  transition: color 0.35s, opacity 0.3s;
+  user-select: none;
 }
 
-.card:hover {
-    transform: translateY(-5px); 
+.hero-quote:hover {
+  color: var(--gold-dim);
 }
 
-/* BUTTONS */
-.btn {
-    transition: all 0.3s ease;
-    letter-spacing: 0.1px !important;
-    border-radius: 0.1 !important ; /* Square edges */
+.hero-sub {
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--ink-mid);
+  max-width: 430px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 
-/* Large Action Button (CTA) */
-.btn-lg {
-    font-size: 0.85rem !important; 
-    padding: 12px 30px !important; 
-    font-weight: 600;
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
+/* ─────────────────────────────────────────
+   SECTION LABELS
+───────────────────────────────────────── */
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 3rem 0 2.2rem;
 }
 
-.btn-dark {
-    background-color: var(--primary-dark);
-    border: 1px solid var(--accent-gold);
-    color: var(--accent-gold);
+/* ─────────────────────────────────────────
+   WORK LIST
+───────────────────────────────────────── */
+#work {
+  margin-bottom: 0;
 }
 
-.btn-dark:hover {
-    background-color: var(--accent-gold);
-    color: var(--primary-dark);
-    transform: translateY(-2px); 
+.work-item {
+  display: grid;
+  grid-template-columns: 48px 1fr 24px;
+  gap: 1.2rem;
+  align-items: start;
+  padding: 1.4rem 0 1.4rem 1rem;
+  border-bottom: 0.5px solid var(--rule-soft);
+  color: inherit;
+  /* Default thin border */
+  border-left: 2px solid transparent;
+  transition: border-left 0.2s, padding-left 0.2s;
+  background: none;
+  border: none;
+  border-bottom: 0.5px solid var(--rule-soft);
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  width: 100%;
 }
 
-/* --- THEME OVERRIDES (Based on category) --- */
-
-/* 1. Legal & GDPR Theme (Green) */
-body.theme-legal {
-    --primary-dark: #143109;
+.work-item:first-of-type {
+  border-top: 0.5px solid var(--rule-soft);
 }
 
-/* 2. Data Science Theme (Navy - Default) */
-body.theme-data {
-    --primary-dark: #0a1a2f;
+/* Default thin colour */
+.work-item.legal    { border-left-color: #4a7060; }
+.work-item.data     { border-left-color: #4a5a80; }
+.work-item.literature { border-left-color: #7a4860; }
+
+/* Hover — thick and vibrant */
+.work-item.legal:hover {
+  border-left: 4px solid var(--legal-light);
+  padding-left: 1.2rem;
+}
+.work-item.data:hover {
+  border-left: 4px solid var(--data-light);
+  padding-left: 1.2rem;
+}
+.work-item.literature:hover {
+  border-left: 4px solid var(--lit-light);
+  padding-left: 1.2rem;
 }
 
-/* 3. Literature Theme (Red) */
-body.theme-literature {
-    --primary-dark: #721817;
+/* Title styling with emphasis */
+.work-item.legal:hover      .work-title { color: var(--legal-light); }
+.work-item.data:hover       .work-title { color: var(--data-light); }
+.work-item.literature:hover .work-title { color: var(--lit-light); }
+
+.work-item.legal:hover      .work-arrow { color: var(--legal-light); transform: translate(2px,-2px); }
+.work-item.data:hover       .work-arrow { color: var(--data-light); transform: translate(2px,-2px); }
+.work-item.literature:hover .work-arrow { color: var(--lit-light); transform: translate(2px,-2px); }
+
+.work-num {
+  font-size: 9px;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  padding-top: 4px;
+  letter-spacing: 0.2em;
 }
 
-/* --- ENHANCED CARD STYLING --- */
-.card-legal { border-top: 5px solid #143109 !important; }
-.card-data { border-top: 5px solid #0a1a2f !important; }
-.card-literature { border-top: 5px solid #721817 !important; }
-
-.category-tag {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    display: block;
+.work-tag {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
-.tag-legal { color: #143109; }
-.tag-data { color: #0a1a2f; }
-.tag-literature { color: #721817; }
+.work-item.legal      .work-tag { color: var(--legal); }
+.work-item.data       .work-tag { color: var(--data); }
+.work-item.literature .work-tag { color: var(--lit); }
 
-
-
-/* For PDF file */
-.modal-content {
-    box-shadow: 0 20px 40px -10px rgba(248, 247, 247, 0.5);
+.work-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  transition: color 0.25s;
 }
 
-/* movement of pdf */
-.card {
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+.work-title em {
+  font-style: italic;
 }
-.card:hover {
-    transform: scale(1.02);
+
+.work-desc {
+  font-size: 12px;
+  color: var(--ink-mid);
+  line-height: 1.68;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+.work-arrow {
+  font-size: 13px;
+  color: var(--rule-soft);
+  text-align: right;
+  padding-top: 4px;
+  transition: color 0.25s, transform 0.25s;
+}
+
+/* ─────────────────────────────────────────
+   ABOUT SECTION
+───────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  gap: 4.5rem;
+  padding: 3.5rem 0 0;
+}
+
+.about-text p {
+  font-size: 13px;
+  line-height: 1.98;
+  color: var(--ink-mid);
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+.about-text p + p {
+  margin-top: 1.2rem;
+}
+
+.about-tagline {
+  margin-top: 1.8rem !important;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 14px !important;
+  color: var(--ink) !important;
+}
+
+.about-tagline em {
+  font-style: italic;
+}
+
+/* Dark aside block */
+.about-aside {
+  background: var(--surface-dark);
+  padding: 1.8rem;
+}
+
+.aside-label {
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #3a6848;
+  margin-bottom: 1.2rem;
+  display: block;
+  font-weight: 600;
+}
+
+.aside-item {
+  font-size: 12px;
+  color: var(--surface-text);
+  line-height: 1.8;
+  font-weight: 300;
+  letter-spacing: 0.1px;
+}
+
+.aside-item.gold {
+  color: var(--gold);
+}
+
+.aside-item.gap {
+  margin-top: 0.8rem;
+}
+
+/* ─────────────────────────────────────────
+   WORK DISTRIBUTION (Data Visualization)
+───────────────────────────────────────── */
+.work-distribution {
+  padding: 3.5rem 0;
+}
+
+.dist-label {
+  font-family: 'IM Fell English', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.dist-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  gap: 2rem;
+  height: 180px;
+  padding: 2rem 0;
+  border-top: 0.5px solid var(--rule-soft);
+  border-bottom: 0.5px solid var(--rule-soft);
+}
+
+.dist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.dist-bar {
+  width: 40px;
+  height: var(--bar-height);
+  background: var(--ink-soft);
+  transition: background 0.3s, filter 0.3s;
+  min-height: 20px;
+}
+
+.dist-bar.legal    { background: var(--legal-light); }
+.dist-bar.data     { background: var(--data-light); }
+.dist-bar.literature { background: var(--lit-light); }
+
+.dist-item:hover .dist-bar {
+  filter: brightness(1.2) saturate(1.1);
+}
+
+.dist-name {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.dist-pct {
+  font-size: 12px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
+   NOTE BLOCK
+───────────────────────────────────────── */
+.note-block {
+  margin: 3.5rem 0;
+  padding: 1.6rem 1.8rem;
+  border-left: 2px solid var(--gold);
+  background: #eaeae5;
+}
+
+.note-label {
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.note-main {
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  line-height: 1.75;
+  font-style: italic;
+  color: #383830;
+  letter-spacing: 0.2px;
+}
+
+.note-reveal {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s;
+  font-size: 11.5px;
+  color: var(--gold-dim);
+  font-weight: 300;
+  margin-top: 0.7rem;
+  line-height: 1.7;
+  letter-spacing: 0.1px;
+}
+
+.note-block:hover .note-reveal {
+  opacity: 1;
+  max-height: 60px;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  padding: 2rem 0 2.8rem;
+  border-top: 0.5px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--ink-soft);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   PDF MODAL
+───────────────────────────────────────── */
+.pdf-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+}
+
+.pdf-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pdf-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 14, 12, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.pdf-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  height: 80vh;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, calc(-50% + 20px));
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+#pdf-viewer {
+  flex: 1;
+  border: none;
+  background: white;
+}
+
+.pdf-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  background: var(--surface-dark);
+  color: var(--gold);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.pdf-close:hover {
+  background: var(--ink);
+}
+
+.pdf-download-btn {
+  padding: 0.8rem 1.2rem;
+  background: var(--surface-dark);
+  color: var(--gold);
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-top: 0.5px solid var(--rule);
+}
+
+.pdf-download-btn:hover {
+  background: var(--ink);
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 620px) {
+  .container { padding: 0 1.4rem; }
+  nav { padding: 1rem 1.4rem; }
+  
+  .hero-quote { font-size: 22px; }
+  .hero-sub { font-size: 12px; }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .work-item {
+    grid-template-columns: 36px 1fr 18px;
+  }
+  
+  .dist-chart {
+    height: 140px;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+  
+  .dist-bar { width: 24px; }
+}
+
+/* ─────────────────────────────────────────
+   HERO — two column
+───────────────────────────────────────── */
+.hero {
+  padding: 4.5rem 0 4rem;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.hero-hint {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 1.4rem;
+  opacity: 0.6;
+}
+
+/* Tag stack — right side of hero */
+.hero-tag-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.htag {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.7rem;
+  display: inline-block;
+  font-weight: 400;
+}
+
+.htag.legal { background: var(--legal); color: #8aaa8a; }
+.htag.data  { background: var(--data);  color: #7a9ab8; }
+.htag.lit   { background: var(--lit);   color: #c4908a; }
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-top: 0.5px solid var(--rule-soft);
+  padding-top: 1rem;
+}
+
+.hero-meta span {
+  font-size: 10px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  font-weight: 300;
+}
+
+/* GitHub icon in nav */
+.nav-github {
+  display: flex;
+  align-items: center;
+  color: var(--surface-text);
+  transition: color 0.25s;
+}
+.nav-github:hover { color: var(--gold); }
+
+/* ─────────────────────────────────────────
+   TOOLS GRID (inside about)
+───────────────────────────────────────── */
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--rule-soft);
+}
+
+.tools-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.tools-item {
+  font-size: 12px;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ─────────────────────────────────────────
+   WRITING SECTION
+───────────────────────────────────────── */
+.writing-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.2rem;
+  align-items: start;
+  padding: 1.4rem 0;
+  border-bottom: 0.5px solid var(--rule-soft);
+  cursor: default;
+  transition: padding-left 0.2s;
+}
+
+.writing-item:first-of-type { border-top: 0.5px solid var(--rule-soft); }
+
+.writing-item:hover { padding-left: 0.5rem; }
+
+.writing-date {
+  font-size: 10px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  padding-top: 3px;
+  font-weight: 300;
+}
+
+.writing-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  font-style: italic;
+}
+
+.writing-desc {
+  font-size: 12px;
+  color: var(--ink-mid);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ─────────────────────────────────────────
+   NOW BLOCK
+───────────────────────────────────────── */
+.now-block {
+  padding: 3rem 0;
+}
+
+.now-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding-top: 0.5rem;
+}
+
+.now-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.now-text {
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.now-text em {
+  font-style: italic;
+  color: var(--ink);
 }
