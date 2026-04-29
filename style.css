@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
 
 :root {
-    --primary-dark: #143109;    /* Dark Theme Base #0a1a2f #143109 #721817*/
+    --primary-dark: #721817;    /* Dark Theme Base #0a1a2f #143109 #721817*/
     --accent-gold: #c5a059;     /* Branding Accent (Gold/Brass) */
     --paper-white: #fdfdfc;     /* Background Tone (Paper-like) */
     --text-main: #2c2c2c;       /* Main Content Text Color */
