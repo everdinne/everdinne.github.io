@@ -11,15 +11,15 @@
   --bg:           #fafafa;
   --ink:          #1a1818;      /* deep ink */
   --ink-mid:      #3a3638;      /* secondary text — deeper grey */
-  --ink-soft:     #7a7678;      /* tertiary / labels */
+  --ink-soft:     #6d696b;      /* tertiary / labels */
   
   /* Lines & rules */
   --rule:         #c4c4c0;
   --rule-soft:    #d8d8d4;
   
   /* Gold accent — old money brass */
-  --gold:         #c8a030;
-  --gold-dim:     #b08a20;
+  --gold:         #f0c244;     /* main gold c8a030 */
+  --gold-dim:     #b08a20;    /* dimmed gold */
   
   /* Domain colours */
   --legal:        #1e3028;      /* deep forest green */
