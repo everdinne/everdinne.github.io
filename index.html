@@ -29,31 +29,48 @@
         <p class="hero-position">Data &amp; AI Strategy · Regulatory Technology · EU Compliance</p>
       </div>
 
-      <p class="hero-sub">Master in Data Science &amp; AI Strategy at emlyon; currently working on GDPR/DSA compliance at the intersection of legal and technical teams and building ML fluency on the side. Based in Paris &amp; Berlin. I got here by way of literature and philosophy, which turns out to be exactly the right preparation. Open to roles, projects, and conversations.</p>
+      <p class="hero-sub">I got here by way of literature and philosophy, which turns out to be exactly the right preparation. Open to roles, projects, and conversations.</p>
 
+      <!-- Identity cards -->
+      <div class="sidebar-cards">
+        <div class="sidebar-card">
+          <span class="card-role">MSc Data Science &amp; AI Strategy</span>
+          <span class="card-org">emlyon Business School</span>
+          <span class="card-detail">Exchange · TU Berlin</span>
+          <span class="card-location">Paris &amp; Berlin</span>
+        </div>
+        <div class="sidebar-card sidebar-card--accent">
+          <span class="card-role">Compliance Intern</span>
+          <span class="card-org">Trust &amp; Fund <span class="card-client">for Shein</span></span>
+          <span class="card-detail">DSA / GDPR</span>
+          <span class="card-location">Paris</span>
+        </div>
+      </div>
+
+      <!-- Skills & Languages -->
       <div class="sidebar-meta">
         <div class="sidebar-meta-block">
-          <span class="sidebar-meta-label">Currently</span>
-          <span class="sidebar-meta-item gold">Master Data Science &amp; AI Strategy</span>
-          <span class="sidebar-meta-item">emlyon Paris Campus</span>
-          <span class="sidebar-meta-item gap">Exchange, TU Berlin</span>
-          <span class="sidebar-meta-item gap gold">Intern, Trust &amp; Fund</span>
-          <span class="sidebar-meta-item">DSA / GDPR Compliance</span>
-          <span class="sidebar-meta-item gap">Paris &amp; Berlin</span>
-        </div>
-        <div class="sidebar-meta-block">
           <span class="sidebar-meta-label">Languages</span>
-          <span class="sidebar-meta-item">Mandarin, native</span>
-          <span class="sidebar-meta-item">English, fluent</span>
-          <span class="sidebar-meta-item">French, working</span>
+          <div class="sidebar-lang-grid">
+            <span class="lang-item">Mandarin <span class="lang-level">native</span></span>
+            <span class="lang-item">English <span class="lang-level">fluent</span></span>
+            <span class="lang-item">French <span class="lang-level">working</span></span>
+          </div>
         </div>
         <div class="sidebar-meta-block">
-          <span class="sidebar-meta-label">Tools</span>
-          <span class="sidebar-meta-item">Python · R · SQL</span>
-          <span class="sidebar-meta-item">NumPy · Pandas</span>
-          <span class="sidebar-meta-item">Power BI · Git</span>
-          <span class="sidebar-meta-item">HTML · CSS</span>
-          <span class="sidebar-meta-item">GDPR · DSA</span>
+          <span class="sidebar-meta-label">Tools &amp; Skills</span>
+          <div class="sidebar-tools-grid">
+            <span class="tool-chip">Python</span>
+            <span class="tool-chip">R</span>
+            <span class="tool-chip">SQL</span>
+            <span class="tool-chip">NumPy</span>
+            <span class="tool-chip">Pandas</span>
+            <span class="tool-chip">Power BI</span>
+            <span class="tool-chip">Git</span>
+            <span class="tool-chip">GDPR</span>
+            <span class="tool-chip">DSA</span>
+            <span class="tool-chip">HTML · CSS</span>
+          </div>
         </div>
       </div>
 
@@ -75,11 +92,6 @@
           Discord
         </a>
       </nav>
-
-      <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <span id="dark-toggle-label">Night</span>
-      </button>
 
       <a href="assets/cv.pdf" class="cv-btn" download>Download CV ↓</a>
 
@@ -344,20 +356,6 @@
     const LAST_UPDATED = '2026-04-30';
 
     document.getElementById('eyebrow-year').textContent = new Date().getFullYear();
-
-    // ── Dark mode toggle ──
-    const darkToggle = document.getElementById('dark-toggle');
-    const darkLabel  = document.getElementById('dark-toggle-label');
-    const html       = document.documentElement;
-    let isDark = localStorage.getItem('theme-mode') === 'dark';
-    function applyDarkMode(dark) {
-      isDark = dark;
-      html.setAttribute('data-theme-mode', dark ? 'dark' : 'light');
-      darkLabel.textContent = dark ? 'Day' : 'Night';
-      localStorage.setItem('theme-mode', dark ? 'dark' : 'light');
-    }
-    applyDarkMode(isDark);
-    darkToggle.addEventListener('click', () => applyDarkMode(!isDark));
 
     // Cursor
     const glow = document.getElementById('cursor-glow');
