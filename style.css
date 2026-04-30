@@ -607,85 +607,84 @@ footer {
    RESPONSIVE
 ───────────────────────────────────────── */
 @media (max-width: 620px) {
-  .container { padding: 0 1.4rem; }
+  .container { padding: 0 1.2rem; }
 
-  /* Nav — stack or shrink */
-  nav { padding: 1rem 1.4rem; }
+  /* Nav */
+  nav { padding: 0.9rem 1.2rem; gap: 0; }
   .nav-context { display: none; }
-  .nav-links { gap: 1.2rem; }
-  .nav-links a { font-size: 8px; letter-spacing: 0.12em; }
+  .nav-right { gap: 1rem; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 8px; letter-spacing: 0.1em; }
+  .nav-name { font-size: 13px; }
 
-  /* Hero */
+  /* Hero — single column, no right panel */
   .hero {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 3rem 0 2.5rem;
+    gap: 1.5rem;
+    padding: 2.5rem 0 2rem;
   }
-  .hero-right {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-  }
-  .hero-tag-stack { display: none; }
-  .hero-quote { font-size: 22px; }
-  .hero-sub   { font-size: 12px; }
+  .hero-right { display: none; }
+  .hero-quote { font-size: 21px; }
+  .hero-sub   { font-size: 12.5px; }
+  .hero-position { font-size: 10px; }
+  .hero-position-sub { font-size: 12px; }
+  .hero-actions { gap: 1rem; flex-wrap: wrap; }
 
-  /* About — stack aside below text */
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .about-aside {
-    padding: 1.2rem;
-  }
+  /* Impact */
+  .impact-anno { grid-template-columns: 70px 1fr; }
+  .impact-anno-num { font-size: 28px; }
+  .impact-anno-left { padding: 1rem 0.8rem 1rem 0; }
+  .impact-anno-right { padding: 1rem 0 1rem 1.2rem; }
+  .impact-text { font-size: 12.5px; }
 
   /* Work items */
-  .work-item {
-    grid-template-columns: 36px 1fr 18px;
-  }
+  .work-item { grid-template-columns: 32px 1fr 18px; }
+  .work-title { font-size: 15px; }
+  .work-outcome { display: block; margin-left: 0; margin-top: 0.2rem; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .about-aside { padding: 1.2rem; }
+  .about-open { flex-direction: column; gap: 0.8rem; }
 
   /* Distribution chart */
-  .dist-chart {
-    height: 140px;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-  }
-  .dist-bar { width: 24px; }
+  .dist-chart { height: 130px; gap: 1.2rem; padding: 1.2rem 0; }
+  .dist-bar { width: 22px; }
+  .dist-name { font-size: 9.5px; }
 
-  /* Now grid */
-  .now-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+  /* Timeline */
+  .timeline-track { height: 60px !important; }
+  .tl-band { height: 10px; }
+  .timeline-axis { font-size: 9px; }
+  .timeline-detail { font-size: 11.5px; }
 
-  /* Contact box */
-  .contact-box {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.2rem;
-  }
+  /* Writing */
+  .writing-item { grid-template-columns: 80px 1fr; }
+  .writing-date { font-size: 10px; }
+  .writing-full p { font-size: 12.5px; }
 
-  /* PDF modal */
+  /* Now */
+  .now-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+
+  /* Contact */
+  .contact-box { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .contact-text { font-size: 13px; }
+
+  /* PDF modal — full screen */
   .pdf-modal-content {
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     transform: none;
     border-radius: 0;
   }
 
-  /* Impact */
-  .impact-item {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
-  }
+  /* Footer */
+  footer { font-size: 9.5px; }
+  .footer-updated { display: none; }
 
-  /* Tools grid */
-  .tools-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+  /* Section hint */
+  .section-hint { display: none; }
 }
 
 /* ─────────────────────────────────────────
@@ -1569,4 +1568,53 @@ footer        { font-size: 11px; }
   color: var(--ink-soft);
   letter-spacing: 0.08em;
   opacity: 0.6;
+}
+
+/* ─────────────────────────────────────────
+   SECTION HINT — no dash, better spacing
+───────────────────────────────────────── */
+.section-hint {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  text-transform: none;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+}
+
+/* ─────────────────────────────────────────
+   HERO RIGHT — more compact
+───────────────────────────────────────── */
+.hero-meta {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  gap: 0.2rem;
+}
+
+.hero-meta span {
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+/* ─────────────────────────────────────────
+   WRITING — in progress tag
+───────────────────────────────────────── */
+.writing-item-pending .writing-title {
+  opacity: 0.6;
+}
+
+.writing-item-pending .writing-desc {
+  opacity: 0.5;
+}
+
+.writing-pending {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-top: 0.4rem;
+  font-weight: 400;
 }
