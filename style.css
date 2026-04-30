@@ -3,35 +3,35 @@
    Old money aesthetic with data visualization
 ───────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Inter:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400&display=swap');
 
 /* ── Design Tokens ── */
 :root {
   /* Base palette */
-  --bg:           #f0f0ec;      /* stone white / cold base */
-  --ink:          #141412;      /* deep ink */
-  --ink-mid:      #585850;      /* secondary text */
-  --ink-soft:     #909088;      /* tertiary / labels */
+  --bg:           #fafafa;
+  --ink:          #1a1818;      /* deep ink */
+  --ink-mid:      #3a3638;      /* secondary text — deeper grey */
+  --ink-soft:     #7a7678;      /* tertiary / labels */
   
   /* Lines & rules */
   --rule:         #c4c4c0;
   --rule-soft:    #d8d8d4;
   
   /* Gold accent — old money brass */
-  --gold:         #c4a24a;
-  --gold-dim:     #a88a2a;
+  --gold:         #c8a030;
+  --gold-dim:     #b08a20;
   
   /* Domain colours */
   --legal:        #1e3028;      /* deep forest green */
   --legal-light:  #2e5040;
-  --data:         #1e3058;      /* midnight blue */
+  --data:         #520025;      /* midnight blue */
   --data-light:   #2a4a70;
-  --lit:          #501828;      /* dark wine */
+  --lit:          #8a2040;      /* dark wine */
   --lit-light:    #6a3040;
   
   /* Surface dark (nav, aside) */
-  --surface-dark: #1e3028;
-  --surface-text: #6a9878;
+  --surface-dark: #f0f0ee;
+  --surface-text: #6B0F1A;
 }
 
 /* ── Reset ── */
@@ -113,6 +113,7 @@ nav {
   top: 0;
   z-index: 100;
   transition: background-color 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 0.5px solid var(--rule-soft);
 }
 
 .nav-right {
@@ -132,27 +133,28 @@ nav {
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--ink-mid);
   text-decoration: none;
   opacity: 1;
   transition: opacity 0.25s;
 }
 
 .nav-links a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
+  color: var(--gold);
 }
 
 .nav-context {
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
-  opacity: 0.6;
+  color: var(--ink-soft);
+  opacity: 0.7;
   transition: opacity 0.2s ease;
   white-space: nowrap;
   margin-left: 2rem;
   padding-left: 2rem;
-  border-left: 0.5px solid rgba(196, 162, 74, 0.25);
+  border-left: 0.5px solid var(--rule-soft);
 }
 
 /* ─────────────────────────────────────────
@@ -171,7 +173,7 @@ nav {
 }
 
 .hero-quote {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 32px;
   line-height: 1.4;
   font-style: normal;
@@ -290,7 +292,7 @@ nav {
 .work-item.literature .work-tag { color: var(--lit); }
 
 .work-title {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   line-height: 1.45;
   color: var(--ink);
@@ -342,7 +344,7 @@ nav {
 
 .about-tagline {
   margin-top: 1.8rem;
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 14px;
   color: var(--ink);
@@ -393,7 +395,7 @@ nav {
 }
 
 .dist-label {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
   font-style: italic;
   color: var(--ink);
@@ -460,7 +462,7 @@ nav {
 }
 
 .note-main {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 15px;
   line-height: 1.75;
   font-style: italic;
@@ -766,7 +768,7 @@ footer {
 .nav-github:hover { opacity: 1; }
 
 .nav-name {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 16px;
   letter-spacing: 0.08em;
   color: var(--gold);
@@ -840,7 +842,7 @@ footer {
 }
 
 .writing-title {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 16px;
   line-height: 1.4;
   color: var(--ink);
@@ -898,7 +900,7 @@ footer {
    ABOUT — Yu-Jou name line
 ───────────────────────────────────────── */
 .about-name-line {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 14px;
   color: var(--ink);
@@ -914,7 +916,7 @@ footer {
   display: block;
   max-height: 0;
   overflow: hidden;
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 12px;
   line-height: 1.65;
@@ -983,7 +985,7 @@ footer {
 }
 
 .impact-anno-num {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 38px;
   color: var(--gold);
@@ -1102,7 +1104,7 @@ hr,
 }
 
 .pdf-intro {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 13px;
   line-height: 1.65;
@@ -1191,7 +1193,7 @@ hr,
 }
 
 .contact-link {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 15px;
   color: var(--gold);
@@ -1619,3 +1621,14 @@ footer        { font-size: 11px; }
   margin-top: 0.4rem;
   font-weight: 400;
 }
+
+/* ─────────────────────────────────────────
+   CORMORANT GARAMOND — weight tuning
+───────────────────────────────────────── */
+.hero-quote    { font-weight: 600; font-size: 34px; }
+.work-title    { font-weight: 400; }
+.about-tagline { font-weight: 400; }
+.note-main     { font-weight: 400; font-size: 17px; }
+.writing-title { font-weight: 400; font-size: 19px; }
+.impact-anno-num { font-weight: 600; }
+.dist-label    { font-weight: 400; }
