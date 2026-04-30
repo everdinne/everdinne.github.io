@@ -302,11 +302,11 @@ nav {
 }
 
 .work-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-mid);
-  line-height: 1.68;
+  line-height: 1.72;
   font-weight: 300;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.15px;
 }
 
 .work-arrow {
@@ -765,6 +765,25 @@ footer {
 .nav-github {
   display: flex;
   align-items: center;
+  color: var(--gold);
+  opacity: 0.65;
+  transition: opacity 0.25s;
+}
+.nav-github:hover { opacity: 1; }
+
+.nav-name {
+  font-family: 'IM Fell English', serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity 0.25s;
+}
+
+.nav-name:hover { opacity: 0.8; }
+.nav-github {
+  display: flex;
+  align-items: center;
   color: var(--surface-text);
   transition: color 0.25s;
 }
@@ -881,32 +900,6 @@ footer {
 /* ─────────────────────────────────────────
    NAV NAME — Everdinne / Yu-Jou hover swap
 ───────────────────────────────────────── */
-.nav-name {
-  position: relative;
-  display: inline-block;
-  font-family: 'IM Fell English', serif;
-  font-size: 15px;
-  letter-spacing: 0.12em;
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.nav-name-everdinne,
-.nav-name-yujou {
-  display: block;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-name-yujou {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transform: translateY(4px);
-  white-space: nowrap;
-  color: #e8c87a;
-}
-
 /* ─────────────────────────────────────────
    ABOUT — Yu-Jou name line
 ───────────────────────────────────────── */
@@ -1432,13 +1425,13 @@ footer        { font-size: 11px; }
    WORK — outcome tag + section hint
 ───────────────────────────────────────── */
 .work-outcome {
-  font-size: 9.5px;
-  letter-spacing: 0.08em;
-  color: var(--ink-soft);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-mid);
   font-weight: 300;
   text-transform: none;
   margin-left: 0.6rem;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .section-hint {
@@ -1518,13 +1511,23 @@ footer        { font-size: 11px; }
    WRITING — expandable full text
 ───────────────────────────────────────── */
 .writing-full {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+}
+
+.writing-full > * {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .writing-full.open {
-  max-height: 2000px;
+  grid-template-rows: 1fr;
+}
+
+.writing-full-inner {
+  overflow: hidden;
 }
 
 .writing-full p {
@@ -1562,4 +1565,14 @@ footer        { font-size: 11px; }
 
 .writing-toggle[aria-expanded="true"] span {
   transform: rotate(180deg);
+}
+
+/* ─────────────────────────────────────────
+   FOOTER — last updated
+───────────────────────────────────────── */
+.footer-updated {
+  font-size: 9px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  opacity: 0.6;
 }
