@@ -172,19 +172,20 @@ nav {
 
 .hero-quote {
   font-family: 'IM Fell English', serif;
-  font-size: 26px;
-  line-height: 1.6;
-  font-style: italic;
+  font-size: 32px;
+  line-height: 1.4;
+  font-style: normal;
   color: var(--ink);
   max-width: 520px;
   margin-bottom: 1.8rem;
   cursor: pointer;
-  transition: color 0.35s, opacity 0.3s;
+  transition: color 0.35s, opacity 0.3s, font-size 0.3s;
   user-select: none;
+  letter-spacing: 0.02em;
 }
 
 .hero-quote:hover {
-  color: var(--gold-dim);
+  color: var(--gold);
 }
 
 .hero-sub {

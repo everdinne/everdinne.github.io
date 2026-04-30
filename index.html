@@ -47,7 +47,7 @@
       <div class="hero-left">
         <p class="eyebrow">Yu-Jou TING &nbsp;·&nbsp; Data Scientist &nbsp;·&nbsp; AI Governance &nbsp;·&nbsp; <span id="eyebrow-year"></span></p>
         <p class="hero-quote" id="hero-quote">
-          The things that resist being named are usually the ones worth examining.
+          Yu-Jou Ting
         </p>
         <p class="hero-position">
           Data &amp; AI Strategy · Regulatory Technology · EU Compliance
@@ -57,7 +57,7 @@
         </p>
         <div class="hero-actions">
           <a href="assets/cv.pdf" class="cv-btn" download>Download CV ↓</a>
-          <p class="hero-hint">↑ click quote to read more</p>
+          <p class="hero-hint">click to read more ↑</p>
         </div>
       </div>
       <div class="hero-right">
@@ -499,8 +499,9 @@
       });
     });
 
-    // ── Hero quote cycle ──
+    // ── Hero quote cycle — default is name, click to explore ──
     const quotes = [
+      "Yu-Jou Ting",
       "The things that resist being named are usually the ones worth examining.",
       "道可道，非常道。",
       "Reading is how I find people who understand things the same way I do.",
@@ -511,7 +512,18 @@
     hq.addEventListener('click', () => {
       qi = (qi + 1) % quotes.length;
       hq.style.opacity = '0';
-      setTimeout(() => { hq.textContent = quotes[qi]; hq.style.opacity = '1'; }, 300);
+      setTimeout(() => {
+        hq.textContent = quotes[qi];
+        // smaller italic style for quotes, larger for name
+        if (qi === 0) {
+          hq.style.fontStyle = 'normal';
+          hq.style.fontSize  = '';
+        } else {
+          hq.style.fontStyle = 'italic';
+          hq.style.fontSize  = '24px';
+        }
+        hq.style.opacity = '1';
+      }, 300);
     });
 
     // ── Auto-calculate distribution ──
