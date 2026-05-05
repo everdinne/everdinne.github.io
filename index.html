@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#fafafa">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lora:wght@600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,8 +41,8 @@
         </div>
         <div class="sidebar-card sidebar-card--accent">
           <span class="card-role">Compliance Intern</span>
-          <span class="card-org">Trust &amp; Fund <span class="card-client">for Shein</span></span>
-          <span class="card-detail">DSA / GDPR</span>
+          <span class="card-org">SHEIN (Infinite Styles Ecommerce France SARL)</span>
+          <span class="card-detail">Legal &amp; Compliance</span>
           <span class="card-location">Paris</span>
         </div>
       </div>
@@ -118,7 +118,7 @@
             <div class="impact-chips">
               <span class="impact-chip">GDPR</span>
               <span class="impact-chip">DSA</span>
-              <span class="impact-chip">Trust &amp; Fund</span>
+              <span class="impact-chip">SHEIN (Infinite Styles Ecommerce France SARL)</span>
               <span class="impact-chip">EU Regulation</span>
             </div>
           </div>
@@ -142,12 +142,9 @@
 
       <!-- WORK -->
       <section id="work" data-theme="behavior" data-context="Behavior">
-        <p class="section-label">Selected work <span class="section-hint">hover each item to shift perspective</span></p>
+        <p class="section-label">Selected work <span class="section-hint">click a lens to shift perspective</span></p>
 
-        <button class="work-item data" data-domain="data" data-theme="behavior" data-context="Behavior"
-          data-pdf="assets/reports/ekimetrics_report.pdf"
-          aria-label="Open report: Ekimetrics technology integration"
-          data-intro="On what it takes to make systems that were never designed to talk to each other actually work together."
+        <div class="work-item data" data-domain="data"
           data-desc-structure="A technical integration roadmap for converging MMM, CDP, and AI platforms across business units."
           data-desc-behavior="Where data architecture decisions become business decisions, and how to map that transition."
           data-desc-meaning="What it means to build infrastructure that has to survive the people who designed it.">
@@ -156,30 +153,36 @@
             <p class="work-tag">Data &amp; AI Architecture <span class="work-outcome">Technology &amp; Data Integration Lead · 5-month project · Ekimetrics</span></p>
             <p class="work-title"><em>MMM, CDP, AI:</em> a technical integration strategy</p>
             <p class="work-desc">In-company project during Ekimetrics' first US market acquisition (ongoing). Responsible for the technology and data integration workstream, focusing on how AI, CDP and MMM systems converge across markets with differing regulatory and technical constraints. Currently structuring integration challenges and framing cross-market platform alignment pathways.</p>
+            <div class="work-perspectives">
+              <button class="perspective-tab active" data-perspective="original">—</button>
+              <button class="perspective-tab" data-perspective="structure">Structure</button>
+              <button class="perspective-tab" data-perspective="behavior">Behavior</button>
+              <button class="perspective-tab" data-perspective="meaning">Meaning</button>
+            </div>
           </div>
-          <span class="work-arrow">↗</span>
-        </button>
+          <a class="work-arrow" href="assets/reports/ekimetrics_report.pdf" aria-label="Open report">↗</a>
+        </div>
 
-        <button class="work-item legal" data-domain="legal" data-theme="structure" data-context="Structure"
-          data-pdf="assets/reports/gdpr_dsa_report.pdf"
-          aria-label="Open report: GDPR, DSA, and machine accountability"
-          data-intro="On what it means to hold a system accountable to language written before the system existed."
+        <div class="work-item legal" data-domain="legal"
           data-desc-structure="Filling the gap between legal obligation and technical reality in EU systems."
           data-desc-behavior="Where compliance breaks, and why it tends to break in the same places."
           data-desc-meaning="What it means to hold something accountable when no one is actually deciding.">
           <span class="work-num">02</span>
           <div class="work-body">
-            <p class="work-tag">Legal &amp; Compliance <span class="work-outcome">EU Compliance · Trust &amp; Fund for Shein</span></p>
+            <p class="work-tag">Legal &amp; Compliance <span class="work-outcome">Legal &amp; Compliance · SHEIN (Infinite Styles Ecommerce France SARL)</span></p>
             <p class="work-title"><em>GDPR, DSA</em> and the question of machine accountability</p>
             <p class="work-desc">Filling the gap between legal obligation and technical reality in EU systems.</p>
+            <div class="work-perspectives">
+              <button class="perspective-tab active" data-perspective="original">—</button>
+              <button class="perspective-tab" data-perspective="structure">Structure</button>
+              <button class="perspective-tab" data-perspective="behavior">Behavior</button>
+              <button class="perspective-tab" data-perspective="meaning">Meaning</button>
+            </div>
           </div>
-          <span class="work-arrow">↗</span>
-        </button>
+          <a class="work-arrow" href="assets/reports/gdpr_dsa_report.pdf" aria-label="Open report">↗</a>
+        </div>
 
-        <button class="work-item data" data-domain="data" data-theme="behavior" data-context="Behavior"
-          data-pdf="assets/reports/sfr_analysis.pdf"
-          aria-label="Open report: SFR B2B field strategy exercise"
-          data-intro="An independent follow-up to a live strategy exercise at SFR. Not delivered. Not finished. But the thinking is real."
+        <div class="work-item data" data-domain="data"
           data-desc-structure="Problem reframing under ambiguity: why SFR's segmentation logic was wrong before the data question."
           data-desc-behavior="Hypothesis-driven design: how to surface digital dependency before it becomes visible in usage data."
           data-desc-meaning="On the difference between measuring what exists and knowing what matters.">
@@ -188,14 +191,17 @@
             <p class="work-tag">Field Strategy Exercise <span class="work-outcome">Independent follow-up · SFR</span></p>
             <p class="work-title"><em>SFR B2B,</em> a thinking artifact</p>
             <p class="work-desc">During an on-site exercise, teams had limited time to respond to a live B2B segmentation problem. This is the independent follow-up I built afterward. Not delivered to SFR. Not a finished roadmap. A demonstration of how I approach a messy real-world problem.</p>
+            <div class="work-perspectives">
+              <button class="perspective-tab active" data-perspective="original">—</button>
+              <button class="perspective-tab" data-perspective="structure">Structure</button>
+              <button class="perspective-tab" data-perspective="behavior">Behavior</button>
+              <button class="perspective-tab" data-perspective="meaning">Meaning</button>
+            </div>
           </div>
-          <span class="work-arrow">↗</span>
-        </button>
+          <a class="work-arrow" href="assets/reports/sfr_analysis.pdf" aria-label="Open report">↗</a>
+        </div>
 
-        <button class="work-item literature" data-domain="literature" data-theme="meaning" data-context="Meaning"
-          data-pdf="assets/reports/karamazov_analysis.pdf"
-          aria-label="Open report: Faith, doubt, and The Brothers Karamazov"
-          data-intro="On Ivan Karamazov, who keeps being right about the wrong things, and why that matters."
+        <div class="work-item literature" data-domain="literature"
           data-desc-structure="A reading of moral structure in The Brothers Karamazov."
           data-desc-behavior="How Ivan Karamazov's arguments work, and why they keep working on you."
           data-desc-meaning="On the ethics of certainty, and why being right doesn't resolve it.">
@@ -204,9 +210,15 @@
             <p class="work-tag">Literature <span class="work-outcome">BA thesis · Tunghai University</span></p>
             <p class="work-title"><em>Faith, doubt</em> and The Brothers Karamazov</p>
             <p class="work-desc">A reading of moral structure in The Brothers Karamazov.</p>
+            <div class="work-perspectives">
+              <button class="perspective-tab active" data-perspective="original">—</button>
+              <button class="perspective-tab" data-perspective="structure">Structure</button>
+              <button class="perspective-tab" data-perspective="behavior">Behavior</button>
+              <button class="perspective-tab" data-perspective="meaning">Meaning</button>
+            </div>
           </div>
-          <span class="work-arrow">↗</span>
-        </button>
+          <a class="work-arrow" href="assets/reports/karamazov_analysis.pdf" aria-label="Open report">↗</a>
+        </div>
       </section>
 
       <hr>
@@ -241,9 +253,9 @@
         <p class="section-label">About</p>
         <div class="about-text">
           <p class="about-name-line">My name is Yu-Jou.</p>
-          <p>I studied literature and philosophy before I studied data.s Nobody plans this path. It just keeps making sense in retrospect.</p>
+          <p>I studied literature and philosophy before I studied data. Nobody plans this path. It just keeps making sense in retrospect.</p>
           <p>Right now I'm finishing a Master in Data Science &amp; AI Strategy at emlyon, on exchange at TU Berlin, and interning in compliance, helping organizations understand what the law is actually asking of them and how to put them into practice through ML.</p>
-          <p class="about-tagline"><em>The through-line, if there is one, would be that I'm interested in the moments where language stops being descriptive and starts having consequences.</em></p>
+          <p class="about-tagline">The through-line, if there is one, would be that I'm interested in the moments where language stops being descriptive and starts having consequences.</p>
           <p class="about-open">Currently open to roles in AI governance, data strategy, and regulatory technology, based in Europe.
             <a href="assets/cv.pdf" class="cv-link" download>Download CV ↓</a>
           </p>
@@ -302,7 +314,7 @@
           </div>
           <div class="now-item">
             <p class="now-label">Working on</p>
-            <p class="now-text">Machine learning fundamentals. Django at TU Berlin. Wrapping up at Trust &amp; Fund and Ekimetrics.</p>
+            <p class="now-text">Machine learning fundamentals. Django at TU Berlin. Wrapping up at SHEIN and Ekimetrics.</p>
           </div>
           <div class="now-item">
             <p class="now-label">Thinking about</p>
@@ -374,24 +386,54 @@
       meaning:   { navBg:'#f0f0ee', rule:'#e0dede', ruleSoft:'#ebebeb', inkMid:'#3a3638', bg:'#fafafa', surfaceText:'#8B1A3A', accentSoft:'#a04060' }
     };
     let currentTheme='structure', scrollTheme='structure', hoverTheme=null;
+
+    // FIX 1: applyTheme no longer swaps descriptions — that's handled separately on hover
     function applyTheme(key) {
       if (key===currentTheme) return;
       currentTheme=key;
       const t=themes[key], r=document.documentElement;
       r.style.setProperty('--surface-dark',t.navBg); r.style.setProperty('--rule',t.rule); r.style.setProperty('--rule-soft',t.ruleSoft);
       r.style.setProperty('--ink-mid',t.inkMid); r.style.setProperty('--bg',t.bg); r.style.setProperty('--surface-text',t.surfaceText); r.style.setProperty('--accent-soft',t.accentSoft);
-      document.querySelectorAll('.work-item[data-desc-'+key+']').forEach(item => {
-        const desc=item.querySelector('.work-desc'), newText=item.getAttribute('data-desc-'+key);
-        if (desc&&newText&&desc.textContent!==newText) { desc.style.opacity='0'; setTimeout(()=>{ desc.textContent=newText; desc.style.opacity='1'; },200); }
-      });
     }
+
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting&&e.intersectionRatio>0.3) { const t=e.target.dataset.theme; if(t){scrollTheme=t; if(!hoverTheme)applyTheme(scrollTheme);} } });
     }, { threshold:[0.1,0.3,0.5], rootMargin:'-10% 0px -30% 0px' });
     document.querySelectorAll('[data-theme]').forEach(el => { if(!el.classList.contains('work-item')) obs.observe(el); });
-    document.querySelectorAll('.work-item[data-theme]').forEach(item => {
-      item.addEventListener('mouseenter',()=>{ hoverTheme=item.dataset.theme; applyTheme(hoverTheme); });
-      item.addEventListener('mouseleave',()=>{ hoverTheme=null; applyTheme(scrollTheme); });
+
+    // Store original descriptions
+    document.querySelectorAll('.work-item').forEach(item => {
+      const desc = item.querySelector('.work-desc');
+      if (desc) item.setAttribute('data-desc-original', desc.textContent.trim());
+    });
+
+    // Perspective tabs — click to swap description
+    document.querySelectorAll('.work-perspectives').forEach(tabs => {
+      const item = tabs.closest('.work-item');
+      const desc = item.querySelector('.work-desc');
+
+      tabs.addEventListener('click', e => {
+        const btn = e.target.closest('.perspective-tab');
+        if (!btn) return;
+
+        // Stop the click bubbling to the ↗ link
+        e.stopPropagation();
+
+        const perspective = btn.dataset.perspective;
+        const newText = perspective === 'original'
+          ? item.getAttribute('data-desc-original')
+          : item.getAttribute('data-desc-' + perspective);
+
+        // Update active tab
+        tabs.querySelectorAll('.perspective-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Swap description with fade
+        if (desc && newText && desc.textContent !== newText) {
+          desc.style.opacity = '0';
+          setTimeout(() => { desc.textContent = newText; desc.style.opacity = '1'; }, 180);
+        }
+      });
     });
 
     // Hero quote
@@ -423,7 +465,7 @@
 
     // Timeline
     (function(){ const START=2021,END=2027.5,SPAN=END-START;
-      const bands=[{label:'BA · Foreign Languages & Literature',sub:'Tunghai University · Taichung, Taiwan · GPA 4.16/4.3',from:2021,to:2025.5,color:'#2c2820',opacity:0.7,track:0},{label:'Linguistic & Cultural Exchange',sub:'McGill University · Montreal, Canada',from:2022.5,to:2022.75,color:'#3a3028',opacity:0.85,track:1},{label:'Research Assistant · CNRS',sub:'French National Centre for Scientific Research · Paris',from:2023.5,to:2023.75,color:'#4a3c28',opacity:0.9,track:1},{label:'Master · Data Science & AI Strategy',sub:'emlyon Business School · Paris · in progress',from:2025.67,to:2027.5,color:'#5a4830',opacity:0.6,track:0},{label:'Data & AI Architecture · Ekimetrics',sub:'5-month in-company project · Paris',from:2026,to:2026.42,color:'#6a5838',opacity:0.9,track:0},{label:'Exchange · TU Berlin',sub:'Technical University of Berlin · Berlin',from:2026.17,to:2026.42,color:'#9a8250',opacity:0.9,track:1},{label:'Intern · Trust & Fund for Shein',sub:'DSA / GDPR Compliance · Paris',from:2026.42,to:2026.92,color:'#8a7248',opacity:0.85,track:2},{label:'Available from late 2026',sub:'Open to roles in AI governance, data strategy & regulatory technology',from:2026.92,to:2027.5,color:'#c4a24a',opacity:0.8,track:2}];
+      const bands=[{label:'BA · Foreign Languages & Literature',sub:'Tunghai University · Taichung, Taiwan · GPA 4.16/4.3',from:2021,to:2025.5,color:'#2c2820',opacity:0.7,track:0},{label:'Linguistic & Cultural Exchange',sub:'McGill University · Montreal, Canada',from:2022.5,to:2022.75,color:'#3a3028',opacity:0.85,track:1},{label:'Research Assistant · CNRS',sub:'French National Centre for Scientific Research · Paris',from:2023.5,to:2023.75,color:'#4a3c28',opacity:0.9,track:1},{label:'Master · Data Science & AI Strategy',sub:'emlyon Business School · Paris · in progress',from:2025.67,to:2027.5,color:'#5a4830',opacity:0.6,track:0},{label:'Data & AI Architecture · Ekimetrics',sub:'5-month in-company project · Paris',from:2026,to:2026.42,color:'#6a5838',opacity:0.9,track:0},{label:'Exchange · TU Berlin',sub:'Technical University of Berlin · Berlin',from:2026.17,to:2026.42,color:'#9a8250',opacity:0.9,track:1},{label:'Legal & Compliance Intern · SHEIN',sub:'SHEIN (Infinite Styles Ecommerce France SARL) · Paris',from:2026.42,to:2026.92,color:'#8a7248',opacity:0.85,track:2},{label:'Available from late 2026',sub:'Open to roles in AI governance, data strategy & regulatory technology',from:2026.92,to:2027.5,color:'#c4a24a',opacity:0.8,track:2}];
       const track=document.getElementById('timeline-track'),detail=document.getElementById('timeline-detail'),detText=detail.querySelector('.timeline-detail-text'),bandEls=[];
       track.style.height=(3*14+2*6)+'px';
       bands.forEach((b,i)=>{ const el=document.createElement('div'); el.className='tl-band'; el.style.cssText=`left:${((b.from-START)/SPAN)*100}%;width:${((b.to-b.from)/SPAN)*100}%;top:${b.track*20}px;background:${b.color};opacity:${b.opacity};`; el.addEventListener('mouseenter',()=>{bandEls.forEach(x=>x.style.opacity='0.15');el.style.opacity='1';detText.innerHTML=`<strong>${b.label}</strong> &nbsp;·&nbsp; ${b.sub}`;detail.classList.add('visible');}); el.addEventListener('mouseleave',()=>{bandEls.forEach((x,j)=>x.style.opacity=bands[j].opacity);detText.innerHTML='hover a band to see more';detail.classList.remove('visible');}); track.appendChild(el); bandEls.push(el); });
