@@ -171,7 +171,7 @@ body {
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
   opacity: 0; transition: opacity .4s;
-} 
+}
 
 .cursor-dot {
   position: fixed; pointer-events: none; z-index: 9999;
