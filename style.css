@@ -134,7 +134,6 @@ body.dark .cursor-glow { background: radial-gradient(circle, #c8a030 0%, transpa
 .topbar-cv:hover { background: var(--gold); color: var(--bg) !important; }
 
 /* Push layout down to clear topbar */
-body { padding-top: 44px; }
 
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -149,6 +148,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   line-height: 1.6;
+  padding-top: 44px;
   transition: background-color 600ms ease, color 400ms ease;
   -webkit-font-smoothing: antialiased;
 }
