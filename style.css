@@ -413,6 +413,22 @@ body {
   line-height: 1.6;
 }
 
+.writing-item--minimal .writing-title {
+  font-size: var(--text-base);
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.writing-toggle--inline {
+  display: inline;
+  margin-top: 0;
+  margin-left: .3rem;
+  font-size: var(--text-xs);
+}
+
 /* Sidebar nav */
 .sidebar-nav {
   display: flex;
@@ -581,10 +597,14 @@ body {
   gap: .9rem;
   align-items: start;
   padding: 1.4rem 0;
+  border-top: 0.5px solid var(--rule-soft);
   background: none;
   width: 100%;
   text-align: left;
+  cursor: default;
 }
+.work-item:hover { background: rgba(200,160,48,.03); }
+.work-item:first-of-type { border-top: none; }
 
 .work-num {
   font-family: var(--serif);
@@ -637,8 +657,6 @@ body {
   transition: opacity .3s;
 }
 
-.work-item:first-of-type { border-top: none; }
-
 .work-arrow {
   font-size: 13px;
   color: var(--rule);
@@ -649,6 +667,30 @@ body {
   align-self: start;
 }
 .work-item:hover .work-arrow { color: var(--gold); }
+
+/* Perspective tabs */
+.work-bullets {
+  margin: .6rem 0 .4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.work-bullets li {
+  font-size: var(--text-base);
+  color: var(--ink-mid);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.work-synthesis {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.72;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: .5rem;
+}
 
 /* Perspective tabs */
 .work-perspectives {
@@ -684,6 +726,104 @@ body {
 .work-item.legal .perspective-tab.active   { color: var(--legal); border-color: var(--legal); }
 .work-item.data .perspective-tab.active    { color: var(--data);  border-color: var(--data);  }
 .work-item.literature .perspective-tab.active { color: var(--lit); border-color: var(--lit);  }
+
+/* ─────────────────────────────────────────
+   SYSTEMS & GOVERNANCE PROJECTS
+───────────────────────────────────────── */
+.sgp-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: .9rem;
+  align-items: start;
+  padding: 1.4rem 0;
+  border-top: 0.5px solid var(--rule-soft);
+}
+.sgp-item:first-of-type { border-top: none; }
+
+.sgp-num {
+  font-family: var(--serif);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--gold);
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+
+.sgp-body {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.sgp-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.sgp-title {
+  font-family: var(--serif);
+  font-size: var(--text-lg);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.sgp-context {
+  font-size: var(--text-xs);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0;
+}
+
+.sgp-problem {
+  font-size: var(--text-base);
+  color: var(--ink-mid);
+  line-height: 1.72;
+  font-weight: 500;
+}
+
+.sgp-problem-label {
+  font-size: var(--text-xs);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-right: .5rem;
+}
+
+.sgp-bullets {
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  list-style: none;
+  margin-top: .2rem;
+}
+
+.sgp-bullets li {
+  font-size: var(--text-base);
+  color: var(--ink-mid);
+  line-height: 1.65;
+  font-weight: 500;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.sgp-bullets li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 300;
+}
 
 /* ─────────────────────────────────────────
    DISTRIBUTION CHART — FIX 2: centered
