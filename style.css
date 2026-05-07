@@ -269,7 +269,7 @@ body {
   object-position: center 15%;
   border-radius: 50%;
   margin-top: 1rem;
-  margin-bottom: -.4rem;
+  margin-bottom: -.8rem;
   display: block;
   flex-shrink: 0;
   filter: brightness(1.08) saturate(0.9);
@@ -456,6 +456,22 @@ body {
 .sidebar-nav .nav-github    { color: var(--ink-soft); }
 .sidebar-nav .nav-github:hover { color: var(--ink); }
 
+.cv-btn--prominent {
+  margin-top: .8rem;
+  font-size: 10px;
+  padding: .55rem 1.1rem;
+  letter-spacing: .16em;
+  display: block;
+  width: fit-content;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+.cv-btn--prominent:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
 /* CV button */
 .cv-btn {
   font-family: var(--sans);
@@ -470,6 +486,7 @@ body {
   display: inline-block;
   width: fit-content;
   font-weight: 600;
+  margin-top: .3rem;
 }
 .cv-btn:hover { background: var(--gold); color: var(--bg); }
 
