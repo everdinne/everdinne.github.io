@@ -9,7 +9,7 @@
    DESIGN TOKENS
 ───────────────────────────────────────── */
 :root {
-  --bg:           #f3f3f3;
+  --bg:           #f8f8f8;
   --ink:          #1a1410;
   --ink-mid:      #3a3530;
   --ink-soft:     #6d6560;
@@ -171,7 +171,7 @@ body {
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
   opacity: 0; transition: opacity .4s;
-} 
+}
 
 .cursor-dot {
   position: fixed; pointer-events: none; z-index: 9999;
@@ -260,8 +260,21 @@ body {
   margin-top: .3rem;
 }
 
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 50%;
+  margin-top: 1rem;
+  margin-bottom: -.4rem;
+  display: block;
+  flex-shrink: 0;
+  filter: brightness(1.08) saturate(0.9);
+}
+
 .hero-sub {
-  font-size: var(--text-sm);
+  font-size: 12px;
   line-height: 1.8;
   color: var(--ink-mid);
   font-weight: 500;
@@ -613,7 +626,7 @@ body {
   font-style: italic;
   color: var(--ink);
   line-height: 1.35;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .work-desc {
