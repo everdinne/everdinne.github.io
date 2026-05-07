@@ -97,6 +97,8 @@ body.dark .icon-sun  { display: none; }
 body.dark .icon-moon { display: block; }
 body.dark .topbar    { background: var(--bg); border-bottom-color: var(--rule); }
 body.dark .cursor-glow { background: radial-gradient(circle, #c8a030 0%, transparent 70%); }
+body.dark .work-title { color: #7aa8d4; }
+body.dark .sgp-title  { color: #7aa8d4; }
 
 
 
@@ -504,7 +506,7 @@ body {
    SECTION LABELS
 ───────────────────────────────────────── */
 .section-label {
-  font-size: var(--text-xs);
+  font-size: 13px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--ink-soft);
@@ -642,9 +644,9 @@ body {
 
 .work-title {
   font-family: var(--serif);
-  font-size: var(--text-lg);
-  font-style: italic;
-  color: var(--ink);
+  font-size: 20px;
+  font-style: normal;
+  color: #1c3557;
   line-height: 1.35;
   font-weight: 600;
 }
@@ -667,6 +669,27 @@ body {
   align-self: start;
 }
 .work-item:hover .work-arrow { color: var(--gold); }
+
+.work-report-btn {
+  display: inline-block;
+  margin-top: .7rem;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  border: 0.5px solid var(--gold);
+  padding: .35rem .8rem;
+  transition: background .2s, color .2s;
+  width: fit-content;
+}
+.work-report-btn:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.work-arrow-placeholder { width: 22px; flex-shrink: 0; }
 
 /* Perspective tabs */
 .work-bullets {
@@ -764,10 +787,10 @@ body {
 
 .sgp-title {
   font-family: var(--serif);
-  font-size: var(--text-lg);
-  font-style: italic;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 600;
-  color: var(--ink);
+  color: #1c3557;
   line-height: 1.35;
 }
 
@@ -823,6 +846,39 @@ body {
   font-size: 20px;
   line-height: 1.1;
   font-weight: 300;
+}
+
+/* ─────────────────────────────────────────
+   RESEARCH
+───────────────────────────────────────── */
+.research-item {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.research-meta {
+  font-size: var(--text-xs);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.research-desc {
+  font-size: var(--text-base);
+  color: var(--ink-mid);
+  line-height: 1.85;
+  font-weight: 500;
+}
+
+.research-wip {
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: .04em;
 }
 
 /* ─────────────────────────────────────────
@@ -1108,48 +1164,19 @@ body {
 }
 .contact-link:hover { opacity: .7; }
 
-/* ─────────────────────────────────────────
-   NOTE BLOCK
-───────────────────────────────────────── */
-.note-block {
-  margin: 0 0 3rem;
-  padding: 1.6rem 1.8rem;
-  border-left: 2px solid var(--accent-soft);
-  background: var(--bg);
-  transition: border-color 500ms ease;
+.note-footer {
+  margin-top: 3rem;
+  padding: 1.2rem 0;
+  border-top: 0.5px solid var(--rule-soft);
 }
 
-.note-label {
-  font-size: var(--text-xs);
-  letter-spacing: .18em;
-  text-transform: uppercase;
+.note-footer-text {
+  font-size: 11px;
   color: var(--ink-soft);
-  margin-bottom: .5rem;
-  display: block;
-  font-weight: 700;
-}
-
-.note-main {
-  font-family: var(--serif);
-  font-size: var(--text-lg);
-  line-height: 1.75;
   font-style: italic;
-  color: var(--ink);
-  font-weight: 400;
+  line-height: 1.6;
+  opacity: .7;
 }
-
-.note-reveal {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity .5s, max-height .5s;
-  font-size: var(--text-sm);
-  color: var(--accent-soft);
-  font-weight: 500;
-  margin-top: .7rem;
-  line-height: 1.7;
-}
-.note-block:hover .note-reveal { opacity: 1; max-height: 60px; }
 
 /* ─────────────────────────────────────────
    PDF MODAL
