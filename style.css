@@ -543,6 +543,17 @@ body {
   margin-top: .2rem;
 }
 
+.section-github {
+  font-size: var(--text-xs);
+  letter-spacing: .1em;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 1rem;
+  text-transform: none;
+}
+.section-github:hover { opacity: .7; }
+
 /* ─────────────────────────────────────────
    FOCUS AREAS (Impact / Annotation)
 ───────────────────────────────────────── */
