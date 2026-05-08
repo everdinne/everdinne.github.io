@@ -26,24 +26,30 @@
         <div class="topbar-dropdown">
           <span class="topbar-dropdown-label">Work ↓</span>
           <div class="topbar-dropdown-menu">
-            <a href="#work">Selected Work</a>
-            <a href="#research">Research</a>
-            <a href="#systems">Systems & Governance</a>
+            <div class="topbar-dropdown-menu-inner">
+              <a href="#work">Selected Work</a>
+              <a href="#research">Research</a>
+              <a href="#systems">Systems & Governance</a>
+            </div>
           </div>
         </div>
         <div class="topbar-dropdown">
           <span class="topbar-dropdown-label">About ↓</span>
           <div class="topbar-dropdown-menu">
-            <a href="#about">About</a>
-            <a href="#writing">Writing</a>
+            <div class="topbar-dropdown-menu-inner">
+              <a href="#about">About</a>
+              <a href="#writing">Writing</a>
+            </div>
           </div>
         </div>
         <div class="topbar-dropdown">
           <span class="topbar-dropdown-label">Contact ↓</span>
           <div class="topbar-dropdown-menu">
-            <a href="mailto:yujou.ting@edu.em-lyon.com">Email</a>
-            <a href="https://www.linkedin.com/in/yu-jou-ting-1a466a3a7" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/everdinne" target="_blank" rel="noopener">GitHub</a>
+            <div class="topbar-dropdown-menu-inner">
+              <a href="mailto:yujou.ting@edu.em-lyon.com">Email</a>
+              <a href="https://www.linkedin.com/in/yu-jou-ting-1a466a3a7" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/everdinne" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </div>
         </div>
         <a href="https://huggingface.co/spaces/everdinne/audit-framework-simulator" target="_blank" rel="noopener" class="topbar-hf">🤗 Demo</a>
@@ -487,6 +493,43 @@
   <script>
     const LAST_UPDATED = '2026-04-30';
     document.getElementById('eyebrow-year').textContent = new Date().getFullYear();
+
+    // Dropdown menus — hover with close delay so menu stays reachable
+    document.querySelectorAll('.topbar-dropdown').forEach(dropdown => {
+      let closeTimer = null;
+
+      function openMenu() {
+        clearTimeout(closeTimer);
+        document.querySelectorAll('.topbar-dropdown').forEach(d => {
+          if (d !== dropdown) d.classList.remove('open');
+        });
+        dropdown.classList.add('open');
+      }
+
+      function closeMenu() {
+        closeTimer = setTimeout(() => dropdown.classList.remove('open'), 120);
+      }
+
+      dropdown.addEventListener('mouseenter', openMenu);
+      dropdown.addEventListener('mouseleave', closeMenu);
+
+      // Click label toggles on mobile / keyboard
+      dropdown.querySelector('.topbar-dropdown-label').addEventListener('click', () => {
+        dropdown.classList.toggle('open');
+      });
+
+      // Close when clicking a menu link
+      dropdown.querySelectorAll('.topbar-dropdown-menu a').forEach(a => {
+        a.addEventListener('click', () => dropdown.classList.remove('open'));
+      });
+    });
+
+    // Close all dropdowns when clicking outside
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.topbar-dropdown')) {
+        document.querySelectorAll('.topbar-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
 
     // Dark mode
     const themeToggle = document.getElementById('theme-toggle');
