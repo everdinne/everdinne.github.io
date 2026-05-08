@@ -781,7 +781,31 @@ body {
 /* ─────────────────────────────────────────
    SYSTEMS & GOVERNANCE PROJECTS
 ───────────────────────────────────────── */
-.sgp-item {
+.sgp-item--featured {
+  display: block;
+  border-top: none;
+  border: 1px solid var(--gold);
+  padding: 1.4rem;
+  margin-bottom: 2rem;
+  background: rgba(200, 160, 48, 0.03);
+}
+
+.work-report-btn--primary {
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
+}
+.work-report-btn--primary:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.topbar-hf {
+  color: var(--ink-soft) !important;
+  font-size: 9.5px;
+  letter-spacing: .1em;
+}
+.topbar-hf:hover { color: var(--ink) !important; }
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: .9rem;
