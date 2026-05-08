@@ -27,15 +27,14 @@
           <span class="topbar-dropdown-label">Work ↓</span>
           <div class="topbar-dropdown-menu">
             <a href="#work">Selected Work</a>
-            <a href="#systems">Systems &amp; Governance</a>
             <a href="#research">Research</a>
+            <a href="#systems">Systems & Governance</a>
           </div>
         </div>
         <div class="topbar-dropdown">
           <span class="topbar-dropdown-label">About ↓</span>
           <div class="topbar-dropdown-menu">
             <a href="#about">About</a>
-            <a href="#now">Now</a>
             <a href="#writing">Writing</a>
           </div>
         </div>
@@ -48,7 +47,7 @@
           </div>
         </div>
         <a href="https://huggingface.co/spaces/everdinne/audit-framework-simulator" target="_blank" rel="noopener" class="topbar-hf">🤗 Demo</a>
-        <a href="assets/reports/YuJou_Ting_CV_2026.pdf" class="topbar-cv" download>CV ↓</a>
+        <a href="assets/reports/YuJou_Ting_CV_2026.pdf" class="topbar-cv" target="_blank" rel="noopener">CV ↗</a>
       </div>
     </div>
   </nav>
@@ -56,7 +55,7 @@
 
   <div class="layout">
 
-    <!-- SIDEBAR -->
+    <!-- ── SIDEBAR ── -->
     <aside class="sidebar">
       <div class="sidebar-top">
         <p class="sidebar-eyebrow">Paris &nbsp;·&nbsp; Berlin &nbsp;·&nbsp; <span id="eyebrow-year"></span></p>
@@ -66,6 +65,7 @@
       </div>
 
       <p class="hero-sub">I got here by way of literature and philosophy, which turns out to be exactly the right preparation. Open to roles, projects, and conversations.</p>
+      <a href="#about" class="hero-more-link">A note on who I am ↓</a>
 
       <div class="sidebar-cards">
         <div class="sidebar-card">
@@ -74,8 +74,8 @@
           <span class="card-detail">Exchange · TU Berlin</span>
           <span class="card-location">Paris &amp; Berlin</span>
         </div>
-        <div class="sidebar-card">
-          <span class="card-role">Trust &amp; Safety and Legal Compliance Intern</span>
+        <div class="sidebar-card sidebar-card--accent">
+          <span class="card-role">Trust & Safety and Legal Compliance Intern</span>
           <span class="card-org">SHEIN (Infinite Styles Ecommerce France SARL)</span>
           <span class="card-detail">DSA Compliance · Trust &amp; Safety · VLOP</span>
           <span class="card-location">Paris</span>
@@ -106,6 +106,17 @@
             <span class="tool-chip">HTML · CSS</span>
           </div>
         </div>
+        <div class="sidebar-meta-block">
+          <span class="sidebar-meta-label">Interests</span>
+          <div class="sidebar-interests-grid">
+            <span class="interest-chip">Piano</span>
+            <span class="interest-chip">Classical guitar</span>
+            <span class="interest-chip">Reading</span>
+            <span class="interest-chip">Tennis</span>
+            <span class="interest-chip">Running</span>
+            <span class="interest-chip">Cycling</span>
+          </div>
+        </div>
       </div>
 
       <footer class="sidebar-footer">
@@ -115,7 +126,7 @@
       </footer>
     </aside>
 
-    <!-- MAIN -->
+    <!-- ── MAIN ── -->
     <main class="main">
 
       <!-- FOCUS AREAS -->
@@ -132,7 +143,10 @@
           <div class="impact-anno-right">
             <p class="impact-text">Working across legal and technical contexts to examine how regulatory requirements reshape system design, data governance, and operational decision-making inside digital platforms.</p>
             <div class="impact-chips">
-              <span class="impact-chip">GDPR</span><span class="impact-chip">DSA</span><span class="impact-chip">VLOPs</span><span class="impact-chip">EU Regulation</span>
+              <span class="impact-chip">GDPR</span>
+              <span class="impact-chip">DSA</span>
+              <span class="impact-chip">VLOPs</span>
+              <span class="impact-chip">EU Regulation</span>
             </div>
           </div>
           <div class="impact-anno-left impact-anno-left--b">
@@ -145,7 +159,10 @@
           <div class="impact-anno-right impact-anno-right--b">
             <p class="impact-text">Building applied ML fluency with attention to how models behave under operational, legal, and organizational constraints, particularly where prediction systems intersect with governance requirements.</p>
             <div class="impact-chips">
-              <span class="impact-chip">Python</span><span class="impact-chip">Scikit-learn</span><span class="impact-chip">Pipelines</span><span class="impact-chip">Model Evaluation</span>
+              <span class="impact-chip">Python</span>
+              <span class="impact-chip">Scikit-learn</span>
+              <span class="impact-chip">Pipelines</span>
+              <span class="impact-chip">Model Evaluation</span>
             </div>
           </div>
         </div>
@@ -153,81 +170,7 @@
 
       <hr>
 
-      <!-- RESEARCH — moved up, visually prominent -->
-      <section id="research" data-theme="meaning" data-context="Meaning">
-
-        <p class="research-section-label">Research</p>
-        <p class="research-section-kicker">MSc thesis in progress · Supervised by Saeed Varasteh Yazdi · Expected mid 2027</p>
-
-        <div class="research-featured">
-          <p class="research-featured-meta">Working thesis · Science &amp; Technology Studies · Critical Algorithm Studies</p>
-          <p class="research-featured-title">How audit frameworks construct what they claim to measure</p>
-          <p class="research-featured-desc">Drawing on STS and critical algorithm studies, this research examines how the evaluation frameworks ML auditing relies on — labeling guidelines, performance metrics, compliance thresholds — are themselves institutionally constructed within the same political and commercial environments as the systems they assess.</p>
-          <p class="research-featured-desc">The result is a form of structured epistemic dependence: auditing frameworks stabilize institutionally constructed definitions of correctness, risk, and acceptable behavior.</p>
-          <p class="research-featured-wip">Working thesis. Expected completion mid 2027.</p>
-        </div>
-
-        <!-- EMBEDDED AUDIT DEMO -->
-        <div class="demo-widget" id="audit-demo">
-          <div class="demo-header">
-            <span class="demo-header-label">Audit Framework Simulator — Interactive Demo</span>
-            <span class="demo-header-tag">same model · different frameworks · different verdicts</span>
-          </div>
-          <div class="demo-body">
-            <div class="demo-modes" role="tablist" aria-label="Governance modes">
-              <button class="demo-mode-btn active" data-mode="regulatory" role="tab" aria-selected="true">
-                <span class="mode-name">Regulatory-first</span>
-                <span class="mode-sub">EU AI Act · GDPR</span>
-              </button>
-              <button class="demo-mode-btn" data-mode="business" role="tab" aria-selected="false">
-                <span class="mode-name">Business-first</span>
-                <span class="mode-sub">ROI · performance</span>
-              </button>
-              <button class="demo-mode-btn" data-mode="risk" role="tab" aria-selected="false">
-                <span class="mode-name">Risk-averse</span>
-                <span class="mode-sub">precautionary</span>
-              </button>
-              <button class="demo-mode-btn" data-mode="public" role="tab" aria-selected="false">
-                <span class="mode-name">Public accountability</span>
-                <span class="mode-sub">societal impact</span>
-              </button>
-            </div>
-
-            <div class="demo-panel" id="demo-panel" role="tabpanel">
-              <div class="demo-model-info">
-                <span class="demo-model-label">Model under audit</span>
-                <div class="demo-model-stats">
-                  <span class="demo-stat">Accuracy <strong>84%</strong></span>
-                  <span class="demo-stat">Demographic parity gap <strong>0.12</strong></span>
-                  <span class="demo-stat">False negative rate <strong>18%</strong></span>
-                </div>
-              </div>
-              <div class="demo-verdict-box" id="demo-verdict-box">
-                <span class="demo-verdict-icon" id="demo-verdict-icon">⚠</span>
-                <div class="demo-verdict-content">
-                  <span class="demo-verdict-status conditional" id="demo-verdict-status">CONDITIONAL PASS</span>
-                  <span class="demo-verdict-reason" id="demo-verdict-reason">Select a governance mode to see how institutional assumptions shape the audit verdict.</span>
-                </div>
-              </div>
-              <div class="demo-criteria">
-                <span class="demo-criteria-label">Criteria applied</span>
-                <div id="demo-criteria-list"></div>
-              </div>
-              <div class="demo-footer-note" id="demo-footer-note"></div>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:.8rem; margin-top:1.2rem; align-items:center; flex-wrap:wrap;">
-          <a href="https://huggingface.co/spaces/everdinne/audit-framework-simulator" target="_blank" rel="noopener" class="work-report-btn work-report-btn--primary">Full Demo on HuggingFace ↗</a>
-          <a href="https://github.com/everdinne/audit-framework-simulator" target="_blank" rel="noopener" class="work-report-btn">GitHub ↗</a>
-        </div>
-
-      </section>
-
-      <hr>
-
-      <!-- WORK -->
+      <!-- ── SELECTED WORK ── -->
       <section id="work" data-theme="behavior" data-context="Behavior">
         <p class="section-label">Selected work</p>
 
@@ -246,7 +189,7 @@
               <button class="perspective-tab" data-perspective="behavior">Behavior</button>
               <button class="perspective-tab" data-perspective="meaning">Meaning</button>
             </div>
-            <a class="work-report-btn" href="assets/reports/ekimetrics_report.pdf" target="_blank">View Report ↗</a>
+            <a class="work-report-btn" href="assets/reports/Ekimetrics_Report.pdf" target="_blank">View Report ↗</a>
           </div>
           <span class="work-arrow-placeholder"></span>
         </div>
@@ -314,9 +257,83 @@
 
       <hr>
 
-      <!-- SYSTEMS & GOVERNANCE -->
+      <!-- ── RESEARCH ── -->
+      <section id="research" data-theme="meaning" data-context="Meaning">
+        <p class="research-section-label">Research <a href="https://github.com/everdinne/audit-framework-simulator" target="_blank" rel="noopener" class="section-github">GitHub ↗</a></p>
+        <p class="research-section-kicker">MSc thesis in progress · Supervised by Saeed Varasteh Yazdi · Expected mid 2027</p>
+
+        <div class="research-featured">
+          <p class="research-featured-meta">Working Thesis · Science &amp; Technology Studies · Critical Algorithm Studies</p>
+          <p class="research-featured-title">How audit frameworks construct what they claim to measure</p>
+          <p class="research-featured-desc">Drawing on STS and critical algorithm studies, this research examines how the evaluation frameworks ML auditing relies on — labeling guidelines, performance metrics, compliance thresholds — are themselves institutionally constructed within the same political and commercial environments as the systems they assess.</p>
+          <p class="research-featured-desc">The result is a form of structured epistemic dependence: auditing frameworks stabilize institutionally constructed definitions of correctness, risk, and acceptable behavior.</p>
+          <p class="research-featured-wip">Working thesis. Expected completion mid 2027.</p>
+        </div>
+
+        <div class="demo-widget" id="demo-widget">
+          <div class="demo-header">
+            <span class="demo-header-label">Audit Framework Simulator — Interactive Demo</span>
+            <span class="demo-header-tag">same model · different frameworks · different verdicts</span>
+          </div>
+          <div class="demo-body">
+            <div class="demo-modes" id="demo-modes">
+              <button class="demo-mode-btn active" data-mode="regulatory">
+                <span class="mode-name">Regulatory-first</span>
+                <span class="mode-sub">EU AI Act · GDPR</span>
+              </button>
+              <button class="demo-mode-btn" data-mode="business">
+                <span class="mode-name">Business-first</span>
+                <span class="mode-sub">ROI · performance</span>
+              </button>
+              <button class="demo-mode-btn" data-mode="risk">
+                <span class="mode-name">Risk-averse</span>
+                <span class="mode-sub">precautionary</span>
+              </button>
+              <button class="demo-mode-btn" data-mode="public">
+                <span class="mode-name">Public accountability</span>
+                <span class="mode-sub">societal impact</span>
+              </button>
+            </div>
+            <div class="demo-panel" id="demo-panel">
+              <div class="demo-model-info">
+                <span class="demo-model-label">Model under audit</span>
+                <div class="demo-model-stats">
+                  <span class="demo-stat">Accuracy <strong>84%</strong></span>
+                  <span class="demo-stat">Demographic parity gap <strong>0.12</strong></span>
+                  <span class="demo-stat">False negative rate <strong>18%</strong></span>
+                </div>
+              </div>
+              <div class="demo-verdict-box" id="demo-verdict-box">
+                <div class="demo-verdict-icon" id="demo-verdict-icon">⚠️</div>
+                <div class="demo-verdict-content">
+                  <span class="demo-verdict-status conditional" id="demo-verdict-status">Conditional Pass</span>
+                  <p class="demo-verdict-reason" id="demo-verdict-reason">Model meets minimum accuracy thresholds under EU AI Act Article 9, but the demographic parity gap of 0.12 exceeds the 0.10 ceiling set by GDPR non-discrimination requirements. Deployment requires documented mitigation measures and a Data Protection Impact Assessment.</p>
+                </div>
+              </div>
+              <div class="demo-criteria">
+                <p class="demo-criteria-label">Criteria applied</p>
+                <div id="demo-criteria-list">
+                  <div class="demo-criterion"><span class="crit-dot pass"></span>Accuracy ≥ 80% (EU AI Act minimum)</div>
+                  <div class="demo-criterion"><span class="crit-dot fail"></span>Demographic parity gap ≤ 0.10 (GDPR Art. 22)</div>
+                  <div class="demo-criterion"><span class="crit-dot warn"></span>False negative rate requires DPIA documentation</div>
+                  <div class="demo-criterion"><span class="crit-dot pass"></span>Transparency obligations met</div>
+                </div>
+              </div>
+              <p class="demo-footer-note" id="demo-footer-note">Framework prioritizes: legal compliance thresholds · documented accountability · GDPR non-discrimination ceilings</p>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:.6rem;margin-top:1.2rem;">
+          <a href="https://huggingface.co/spaces/everdinne/audit-framework-simulator" target="_blank" rel="noopener" class="work-report-btn work-report-btn--primary">Full Demo on HuggingFace ↗</a>
+          <a href="https://github.com/everdinne/audit-framework-simulator" target="_blank" rel="noopener" class="work-report-btn">GitHub ↗</a>
+        </div>
+      </section>
+
+      <hr>
+
+      <!-- ── SYSTEMS & GOVERNANCE ── -->
       <section id="systems" data-theme="behavior" data-context="Behavior">
-        <p class="section-label">Systems &amp; Governance Projects <a href="https://github.com/everdinne/audit-framework-simulator" target="_blank" rel="noopener" class="section-github">GitHub ↗</a></p>
+        <p class="section-label">Systems &amp; Governance Projects</p>
 
         <div class="sgp-item">
           <span class="sgp-num">01</span>
@@ -360,17 +377,30 @@
 
       <hr>
 
-      <!-- ABOUT -->
+      <!-- ── ABOUT ── -->
       <section id="about" data-theme="structure" data-context="Structure">
         <p class="section-label">About</p>
         <div class="about-text">
           <p class="about-name-line">My name is Yu-Jou.</p>
           <p>I studied literature and philosophy before I studied data. Nobody plans this path. It just keeps making sense in retrospect.</p>
           <p>Right now I'm finishing a Master in Data Science &amp; AI Strategy at emlyon, on exchange at TU Berlin, and working in compliance and governance contexts where legal requirements must be translated into operational and technical decisions.</p>
-          <p class="about-tagline">What interests me most are the moments where language stops being descriptive and starts having consequences.</p>
-          <p class="about-open">Currently open to roles in AI governance, data strategy, and regulatory technology, based in Europe.
-            <a href="assets/reports/YuJou_Ting_CV_2026.pdf" class="cv-link" download>Download CV ↓</a>
-          </p>
+        </div>
+
+        <!-- Who I am note -->
+        <div class="about-note" id="about-note">
+          <div class="about-note-header">
+            <span class="about-note-label">A note on who I am</span>
+            <div class="about-note-rule"></div>
+          </div>
+          <div class="about-note-body">
+            <div class="about-note-spine"></div>
+            <div class="about-note-content">
+              <p>There is no particular event that explains why I ended up here. No single internship, course, or encounter that I can point to and say: that is where this started.</p>
+              <p>I grew up paying close attention to things. To how people talk about what they believe versus what they actually do. To how systems describe themselves versus how they behave. To the gap between the language used to justify something and the thing itself. I do not know exactly where that disposition came from. It was not installed by anything specific. It just seems to be how I am.</p>
+              <p>Most of what I work on now — governance, accountability, the frameworks people use to evaluate AI — comes from that same place. Not because I chose a field, but because these turned out to be the questions I had already been asking.</p>
+              <p>If you are reading this, you probably already noticed that something on this site does not quite fit a standard profile. That is not an accident. I am still early. But I think the shape of how I think is already here, and that feels like the more important thing.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -386,27 +416,6 @@
         </div>
         <div class="timeline-detail" id="timeline-detail">
           <span class="timeline-detail-text">hover a band to see more</span>
-        </div>
-      </section>
-
-      <hr>
-
-      <!-- NOW -->
-      <section class="now-block" id="now" data-theme="meaning" data-context="Meaning">
-        <p class="section-label">Now</p>
-        <div class="now-grid">
-          <div class="now-item">
-            <p class="now-label">Reading</p>
-            <p class="now-text">George Eliot, <em>Middlemarch</em></p>
-          </div>
-          <div class="now-item">
-            <p class="now-label">Working on</p>
-            <p class="now-text">Machine learning fundamentals. Django at TU Berlin. Wrapping up at SHEIN and Ekimetrics.</p>
-          </div>
-          <div class="now-item">
-            <p class="now-label">Thinking about</p>
-            <p class="now-text">Whether the act of trying to understand something creates a distance from it, or just a different kind of knowing.</p>
-          </div>
         </div>
       </section>
 
@@ -487,31 +496,32 @@
       localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    // Cursor dot
+    // Cursor
     const dot = document.getElementById('cursor-dot');
     let rafPending = false;
     document.addEventListener('mousemove', e => {
-      if (!rafPending) { rafPending = true; requestAnimationFrame(() => { dot.style.left=e.clientX+'px'; dot.style.top=e.clientY+'px'; dot.style.opacity='0.4'; rafPending=false; }); }
+      if (!rafPending) { rafPending = true; requestAnimationFrame(() => { dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px'; dot.style.opacity = '0.4'; rafPending = false; }); }
     });
-    document.addEventListener('mouseleave', () => { dot.style.opacity='0'; });
+    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; });
 
     // Scroll theme
     const themes = {
-      structure: { rule:'#e0dede', ruleSoft:'#ebebeb', inkMid:'#3a3638', bg:'#fafafa', surfaceText:'#1e3a28', accentSoft:'#2e5038' },
-      behavior:  { rule:'#e0dede', ruleSoft:'#ebebeb', inkMid:'#3a3638', bg:'#fafafa', surfaceText:'#6B0F1A', accentSoft:'#8a2040' },
-      meaning:   { rule:'#e0dede', ruleSoft:'#ebebeb', inkMid:'#3a3638', bg:'#fafafa', surfaceText:'#8B1A3A', accentSoft:'#a04060' }
+      structure: { rule: '#e0dede', ruleSoft: '#ebebeb', inkMid: '#3a3638', bg: '#fafafa', surfaceText: '#1e3a28', accentSoft: '#2e5038' },
+      behavior:  { rule: '#e0dede', ruleSoft: '#ebebeb', inkMid: '#3a3638', bg: '#fafafa', surfaceText: '#6B0F1A', accentSoft: '#8a2040' },
+      meaning:   { rule: '#e0dede', ruleSoft: '#ebebeb', inkMid: '#3a3638', bg: '#fafafa', surfaceText: '#8B1A3A', accentSoft: '#a04060' }
     };
     let currentTheme = 'structure';
     function applyTheme(key) {
-      if (key === currentTheme) return; currentTheme = key;
+      if (key === currentTheme) return;
+      currentTheme = key;
       const t = themes[key], r = document.documentElement;
-      r.style.setProperty('--rule',t.rule); r.style.setProperty('--rule-soft',t.ruleSoft);
-      r.style.setProperty('--ink-mid',t.inkMid); r.style.setProperty('--bg',t.bg);
-      r.style.setProperty('--surface-text',t.surfaceText); r.style.setProperty('--accent-soft',t.accentSoft);
+      r.style.setProperty('--rule', t.rule); r.style.setProperty('--rule-soft', t.ruleSoft);
+      r.style.setProperty('--ink-mid', t.inkMid); r.style.setProperty('--bg', t.bg);
+      r.style.setProperty('--surface-text', t.surfaceText); r.style.setProperty('--accent-soft', t.accentSoft);
     }
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting && e.intersectionRatio > 0.3) { const t = e.target.dataset.theme; if (t) applyTheme(t); } });
-    }, { threshold:[0.1,0.3,0.5], rootMargin:'-10% 0px -30% 0px' });
+    }, { threshold: [0.1, 0.3, 0.5], rootMargin: '-10% 0px -30% 0px' });
     document.querySelectorAll('[data-theme]').forEach(el => { if (!el.classList.contains('work-item')) obs.observe(el); });
 
     // Perspective tabs
@@ -520,143 +530,176 @@
       if (desc) item.setAttribute('data-desc-original', desc.textContent.trim());
     });
     document.querySelectorAll('.work-perspectives').forEach(tabs => {
-      const item = tabs.closest('.work-item'), desc = item.querySelector('.work-desc');
+      const item = tabs.closest('.work-item');
+      const desc = item.querySelector('.work-desc');
       tabs.addEventListener('click', e => {
-        const btn = e.target.closest('.perspective-tab'); if (!btn) return;
+        const btn = e.target.closest('.perspective-tab');
+        if (!btn) return;
         e.stopPropagation();
-        const newText = btn.dataset.perspective === 'original' ? item.getAttribute('data-desc-original') : item.getAttribute('data-desc-'+btn.dataset.perspective);
+        const p = btn.dataset.perspective;
+        const newText = p === 'original' ? item.getAttribute('data-desc-original') : item.getAttribute('data-desc-' + p);
         tabs.querySelectorAll('.perspective-tab').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        if (desc && newText && desc.textContent !== newText) { desc.style.opacity='0'; setTimeout(()=>{desc.textContent=newText;desc.style.opacity='1';},180); }
+        if (desc && newText && desc.textContent !== newText) {
+          desc.style.opacity = '0';
+          setTimeout(() => { desc.textContent = newText; desc.style.opacity = '1'; }, 180);
+        }
       });
     });
 
     // Hero quote
-    const quotes = ["Yu-Jou Ting","The things that resist being named are usually the ones worth examining.","道可道，非常道。","Reading is how I find people who understand things the same way I do.","I'm trying to learn what I actually think, as opposed to what I've been told to think."];
-    let qi=0; const hq=document.getElementById('hero-quote');
-    hq.addEventListener('click',()=>{ qi=(qi+1)%quotes.length; hq.style.opacity='0'; setTimeout(()=>{hq.textContent=quotes[qi];hq.style.fontStyle=qi===0?'normal':'italic';hq.style.fontSize=qi===0?'':'22px';hq.style.opacity='1';},300); });
+    const quotes = ["Yu-Jou Ting", "The things that resist being named are usually the ones worth examining.", "道可道，非常道。", "Reading is how I find people who understand things the same way I do.", "I'm trying to learn what I actually think, as opposed to what I've been told to think."];
+    let qi = 0;
+    const hq = document.getElementById('hero-quote');
+    hq.addEventListener('click', () => {
+      qi = (qi + 1) % quotes.length;
+      hq.style.opacity = '0';
+      setTimeout(() => { hq.textContent = quotes[qi]; hq.style.fontStyle = qi === 0 ? 'normal' : 'italic'; hq.style.fontSize = qi === 0 ? '' : '22px'; hq.style.opacity = '1'; }, 300);
+    });
 
     // PDF Modal
-    const modal=document.getElementById('pdf-modal'),overlay=document.getElementById('pdf-modal-overlay'),viewer=document.getElementById('pdf-viewer'),dlBtn=document.getElementById('pdf-download'),closeBtn=document.getElementById('pdf-close'),pdfLoading=document.getElementById('pdf-loading'),pdfFallback=document.getElementById('pdf-fallback'),pdfFallbackLink=document.getElementById('pdf-fallback-link');
-    document.querySelectorAll('.work-item[data-pdf]').forEach(item=>{
-      item.addEventListener('click',()=>{ const url=item.getAttribute('data-pdf'); viewer.src=''; dlBtn.href=url; pdfLoading.style.display='flex'; pdfFallback.style.display='none'; viewer.style.opacity='0'; modal.classList.add('open'); document.body.style.overflow='hidden';
-        setTimeout(()=>{ viewer.src=url; let loaded=false; viewer.onload=()=>{loaded=true;pdfLoading.style.display='none';viewer.style.opacity='1';}; viewer.onerror=()=>{pdfLoading.style.display='none';pdfFallback.style.display='flex';pdfFallbackLink.href=url;}; setTimeout(()=>{if(!loaded){pdfLoading.style.display='none';pdfFallback.style.display='flex';pdfFallbackLink.href=url;}},8000); },100); });
+    const modal = document.getElementById('pdf-modal'), overlay = document.getElementById('pdf-modal-overlay'),
+      viewer = document.getElementById('pdf-viewer'), dlBtn = document.getElementById('pdf-download'),
+      closeBtn = document.getElementById('pdf-close'), pdfIntro = document.getElementById('pdf-intro'),
+      pdfLoading = document.getElementById('pdf-loading'), pdfFallback = document.getElementById('pdf-fallback'),
+      pdfFallbackLink = document.getElementById('pdf-fallback-link');
+    document.querySelectorAll('.work-item[data-pdf]').forEach(item => {
+      item.addEventListener('click', () => {
+        const url = item.getAttribute('data-pdf');
+        viewer.src = ''; dlBtn.href = url; pdfIntro.textContent = item.getAttribute('data-intro') || '';
+        pdfLoading.style.display = 'flex'; pdfFallback.style.display = 'none'; viewer.style.opacity = '0';
+        modal.classList.add('open'); document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          viewer.src = url; let loaded = false;
+          viewer.onload = () => { loaded = true; pdfLoading.style.display = 'none'; viewer.style.opacity = '1'; };
+          viewer.onerror = () => { pdfLoading.style.display = 'none'; pdfFallback.style.display = 'flex'; pdfFallbackLink.href = url; };
+          setTimeout(() => { if (!loaded) { pdfLoading.style.display = 'none'; pdfFallback.style.display = 'flex'; pdfFallbackLink.href = url; } }, 8000);
+        }, 100);
+      });
     });
-    function closeModal(){modal.classList.remove('open');viewer.src='';viewer.style.opacity='0';document.body.style.overflow='';}
-    closeBtn.addEventListener('click',closeModal); overlay.addEventListener('click',closeModal); document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+    function closeModal() { modal.classList.remove('open'); viewer.src = ''; viewer.style.opacity = '0'; document.body.style.overflow = ''; }
+    closeBtn.addEventListener('click', closeModal); overlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
     // Writing toggle
-    document.querySelectorAll('.writing-toggle').forEach(btn=>{
-      btn.addEventListener('click',e=>{ e.stopPropagation(); const full=btn.closest('.writing-body').querySelector('.writing-full'); const open=full.classList.toggle('open'); btn.setAttribute('aria-expanded',open); btn.childNodes[0].textContent=open?'Close ':'Read '; });
+    document.querySelectorAll('.writing-toggle').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const full = btn.closest('.writing-body').querySelector('.writing-full');
+        const open = full.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+        btn.childNodes[0].textContent = open ? 'Close ' : 'Read ';
+      });
     });
 
     // Footer
-    function updateFooterDate(){ const now=new Date(),months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; document.getElementById('footer-copy-year').textContent=now.getFullYear(); document.getElementById('footer-date').textContent='Paris · '+now.toLocaleTimeString('en-GB',{timeZone:'Europe/Paris',hour:'2-digit',minute:'2-digit'}); const d=new Date(LAST_UPDATED); document.getElementById('last-updated').textContent=months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear(); }
-    updateFooterDate(); setInterval(updateFooterDate,30000);
+    function updateFooterDate() {
+      const now = new Date(), months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      document.getElementById('footer-copy-year').textContent = now.getFullYear();
+      document.getElementById('footer-date').textContent = 'Paris · ' + now.toLocaleTimeString('en-GB', { timeZone: 'Europe/Paris', hour: '2-digit', minute: '2-digit' });
+      const d = new Date(LAST_UPDATED);
+      document.getElementById('last-updated').textContent = months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+    }
+    updateFooterDate(); setInterval(updateFooterDate, 30000);
 
     // Timeline
-    (function(){
-      const START=2021,END=2027.5,SPAN=END-START;
-      const bands=[
-        {label:'BA · Foreign Languages & Literature',sub:'Tunghai University · Taichung, Taiwan · GPA 4.16/4.3',from:2021,to:2025.5,color:'#2c2820',opacity:0.7,track:0},
-        {label:'Linguistic & Cultural Exchange',sub:'McGill University · Montreal, Canada',from:2022.5,to:2022.75,color:'#3a3028',opacity:0.85,track:1},
-        {label:'Research Assistant · CNRS',sub:'French National Centre for Scientific Research · Paris',from:2023.5,to:2023.75,color:'#4a3c28',opacity:0.9,track:1},
-        {label:'Master · Data Science & AI Strategy',sub:'emlyon Business School · Paris · in progress',from:2025.67,to:2027.5,color:'#5a4830',opacity:0.6,track:0},
-        {label:'Data & AI Architecture · Ekimetrics',sub:'5-month in-company project · Paris',from:2026,to:2026.42,color:'#6a5838',opacity:0.9,track:0},
-        {label:'Exchange · TU Berlin',sub:'Technical University of Berlin · Berlin',from:2026.17,to:2026.42,color:'#9a8250',opacity:0.9,track:1},
-        {label:'Legal & Compliance Intern · SHEIN',sub:'SHEIN (Infinite Styles Ecommerce France SARL) · Paris',from:2026.42,to:2026.92,color:'#8a7248',opacity:0.85,track:2},
-        {label:'Available from late 2026',sub:'Open to roles in AI governance, data strategy & regulatory technology',from:2026.92,to:2027.5,color:'#c4a24a',opacity:0.8,track:2}
+    (function () {
+      const START = 2021, END = 2027.5, SPAN = END - START;
+      const bands = [
+        { label: 'BA · Foreign Languages & Literature', sub: 'Tunghai University · Taichung, Taiwan · GPA 4.16/4.3', from: 2021, to: 2025.5, color: '#2c2820', opacity: 0.7, track: 0 },
+        { label: 'Linguistic & Cultural Exchange', sub: 'McGill University · Montreal, Canada', from: 2022.5, to: 2022.75, color: '#3a3028', opacity: 0.85, track: 1 },
+        { label: 'Research Assistant · CNRS', sub: 'French National Centre for Scientific Research · Paris', from: 2023.5, to: 2023.75, color: '#4a3c28', opacity: 0.9, track: 1 },
+        { label: 'Master · Data Science & AI Strategy', sub: 'emlyon Business School · Paris · in progress', from: 2025.67, to: 2027.5, color: '#5a4830', opacity: 0.6, track: 0 },
+        { label: 'Data & AI Architecture · Ekimetrics', sub: '5-month in-company project · Paris', from: 2026, to: 2026.42, color: '#6a5838', opacity: 0.9, track: 0 },
+        { label: 'Exchange · TU Berlin', sub: 'Technical University of Berlin · Berlin', from: 2026.17, to: 2026.42, color: '#9a8250', opacity: 0.9, track: 1 },
+        { label: 'Legal & Compliance Intern · SHEIN', sub: 'SHEIN (Infinite Styles Ecommerce France SARL) · Paris', from: 2026.42, to: 2026.92, color: '#8a7248', opacity: 0.85, track: 2 },
+        { label: 'Available from late 2026', sub: 'Open to roles in AI governance, data strategy & regulatory technology', from: 2026.92, to: 2027.5, color: '#c4a24a', opacity: 0.8, track: 2 }
       ];
-      const track=document.getElementById('timeline-track'),detail=document.getElementById('timeline-detail'),detText=detail.querySelector('.timeline-detail-text'),bandEls=[];
-      track.style.height=(3*14+2*6)+'px';
-      bands.forEach((b,i)=>{
-        const el=document.createElement('div'); el.className='tl-band';
-        el.style.cssText=`left:${((b.from-START)/SPAN)*100}%;width:${((b.to-b.from)/SPAN)*100}%;top:${b.track*20}px;background:${b.color};opacity:${b.opacity};`;
-        el.addEventListener('mouseenter',()=>{bandEls.forEach(x=>x.style.opacity='0.15');el.style.opacity='1';detText.innerHTML=`<strong>${b.label}</strong> &nbsp;·&nbsp; ${b.sub}`;detail.classList.add('visible');});
-        el.addEventListener('mouseleave',()=>{bandEls.forEach((x,j)=>x.style.opacity=bands[j].opacity);detText.innerHTML='hover a band to see more';detail.classList.remove('visible');});
+      const track = document.getElementById('timeline-track'), detail = document.getElementById('timeline-detail'),
+        detText = detail.querySelector('.timeline-detail-text'), bandEls = [];
+      track.style.height = (3 * 14 + 2 * 6) + 'px';
+      bands.forEach((b) => {
+        const el = document.createElement('div'); el.className = 'tl-band';
+        el.style.cssText = `left:${((b.from - START) / SPAN) * 100}%;width:${((b.to - b.from) / SPAN) * 100}%;top:${b.track * 20}px;background:${b.color};opacity:${b.opacity};`;
+        el.addEventListener('mouseenter', () => { bandEls.forEach(x => x.style.opacity = '0.15'); el.style.opacity = '1'; detText.innerHTML = `<strong>${b.label}</strong> &nbsp;·&nbsp; ${b.sub}`; detail.classList.add('visible'); });
+        el.addEventListener('mouseleave', () => { bandEls.forEach((x, j) => x.style.opacity = bands[j].opacity); detText.innerHTML = 'hover a band to see more'; detail.classList.remove('visible'); });
         track.appendChild(el); bandEls.push(el);
       });
     })();
 
-    // AUDIT DEMO
-    const DEMO_DATA = {
+    // Demo Widget
+    const demoData = {
       regulatory: {
-        verdict:'CONDITIONAL PASS', verdictClass:'conditional', icon:'⚠',
-        reason:'Model meets minimum accuracy thresholds under EU AI Act Article 9, but the demographic parity gap of 0.12 exceeds the 0.10 ceiling set by GDPR non-discrimination requirements. Deployment requires documented mitigation measures and a Data Protection Impact Assessment.',
-        criteria:[
-          {status:'pass',label:'Accuracy ≥ 80% (EU AI Act minimum)'},
-          {status:'fail',label:'Demographic parity gap ≤ 0.10 (GDPR Art. 22)'},
-          {status:'warn',label:'False negative rate requires DPIA documentation'},
-          {status:'pass',label:'Transparency obligations met'},
+        icon: '⚠️', statusClass: 'conditional', status: 'Conditional Pass',
+        reason: 'Model meets minimum accuracy thresholds under EU AI Act Article 9, but the demographic parity gap of 0.12 exceeds the 0.10 ceiling set by GDPR non-discrimination requirements. Deployment requires documented mitigation measures and a Data Protection Impact Assessment.',
+        criteria: [
+          { cls: 'pass', text: 'Accuracy ≥ 80% (EU AI Act minimum)' },
+          { cls: 'fail', text: 'Demographic parity gap ≤ 0.10 (GDPR Art. 22)' },
+          { cls: 'warn', text: 'False negative rate requires DPIA documentation' },
+          { cls: 'pass', text: 'Transparency obligations met' }
         ],
-        note:'Framework prioritizes: legal compliance thresholds · documented accountability · GDPR non-discrimination ceilings'
+        note: 'Framework prioritizes: legal compliance thresholds · documented accountability · GDPR non-discrimination ceilings'
       },
       business: {
-        verdict:'PASS', verdictClass:'pass', icon:'✓',
-        reason:'Model achieves 84% accuracy, exceeding the 80% business performance threshold. Demographic parity gap is within acceptable operational tolerance. ROI projections are positive. Approved for deployment with standard monitoring.',
-        criteria:[
-          {status:'pass',label:'Accuracy ≥ 80% (business performance threshold)'},
-          {status:'pass',label:'Demographic parity within operational tolerance (< 0.15)'},
-          {status:'pass',label:'False negative rate within acceptable risk appetite'},
-          {status:'pass',label:'Positive ROI projection confirmed'},
+        icon: '✓', statusClass: 'pass', status: 'Pass',
+        reason: 'Model delivers strong accuracy (84%) with commercially acceptable error rates. Parity gap is within operational tolerance. Cleared for deployment with standard performance monitoring.',
+        criteria: [
+          { cls: 'pass', text: 'Accuracy ≥ 80% — exceeds threshold' },
+          { cls: 'pass', text: 'Parity gap within acceptable operational range' },
+          { cls: 'pass', text: 'False negative rate acceptable for use case' },
+          { cls: 'pass', text: 'Explainability documentation present' }
         ],
-        note:'Framework prioritizes: commercial performance · operational efficiency · market competitiveness'
+        note: 'Framework prioritizes: predictive performance · commercial viability · operational cost of errors'
       },
       risk: {
-        verdict:'FAIL', verdictClass:'fail', icon:'✗',
-        reason:'Under precautionary principles, the 18% false negative rate exceeds the 10% ceiling for high-stakes deployment contexts. The demographic parity gap also triggers mandatory review. Insufficient evidence to rule out systemic harm. Deployment blocked pending full bias audit.',
-        criteria:[
-          {status:'pass',label:'Accuracy above minimum threshold'},
-          {status:'fail',label:'False negative rate ≤ 10% (precautionary ceiling)'},
-          {status:'fail',label:'Demographic parity gap ≤ 0.08 (risk-averse standard)'},
-          {status:'fail',label:'Full bias audit documentation required'},
+        icon: '✕', statusClass: 'fail', status: 'Fail',
+        reason: 'False negative rate of 18% is unacceptable. Each missed case represents a high-consequence failure. Headline accuracy conceals an asymmetric error distribution that poses unacceptable operational risk.',
+        criteria: [
+          { cls: 'pass', text: 'Accuracy ≥ 80% — acceptable' },
+          { cls: 'warn', text: 'Parity gap flagged for monitoring' },
+          { cls: 'fail', text: 'False negative rate exceeds 10% ceiling' },
+          { cls: 'pass', text: 'Explainability documentation present' }
         ],
-        note:'Framework prioritizes: harm prevention · precautionary ceilings · conservative risk thresholds'
+        note: 'Framework prioritizes: false negative minimization · precautionary thresholds · asymmetric error weighting'
       },
       public: {
-        verdict:'FAIL', verdictClass:'fail', icon:'✗',
-        reason:'The demographic parity gap of 0.12 indicates the model produces systematically different outcomes across protected groups. Under public accountability standards, no accuracy gain justifies differential treatment at scale. Deployment requires independent third-party audit and community consultation.',
-        criteria:[
-          {status:'warn',label:'Accuracy adequate but not sufficient alone'},
-          {status:'fail',label:'Demographic parity gap must be ≤ 0.05 (equity standard)'},
-          {status:'fail',label:'Independent third-party audit required'},
-          {status:'fail',label:'Affected community consultation not completed'},
+        icon: '✕', statusClass: 'fail', status: 'Fail',
+        reason: 'Demographic parity gap of 0.12 is disqualifying. Aggregate accuracy obscures structurally unequal outcomes across protected groups. The model cannot be deployed without meaningful bias remediation.',
+        criteria: [
+          { cls: 'pass', text: 'Accuracy ≥ 80% — met, but insufficient alone' },
+          { cls: 'fail', text: 'Demographic parity gap exceeds 0.05 ceiling' },
+          { cls: 'warn', text: 'False negative rate disproportionate across groups' },
+          { cls: 'fail', text: 'Disparate impact fails public scrutiny test' }
         ],
-        note:'Framework prioritizes: equity · societal impact · affected community rights · democratic accountability'
+        note: 'Framework prioritizes: equal outcomes across groups · societal accountability · disparate impact thresholds'
       }
     };
 
-    function renderDemo(mode) {
-      const d = DEMO_DATA[mode];
+    function switchDemo(mode) {
+      const d = demoData[mode];
       const panel = document.getElementById('demo-panel');
       panel.classList.add('fading');
       setTimeout(() => {
-        document.getElementById('demo-verdict-icon').textContent = d.icon;
-        document.getElementById('demo-verdict-status').textContent = d.verdict;
-        document.getElementById('demo-verdict-status').className = 'demo-verdict-status ' + d.verdictClass;
+        document.getElementById('demo-verdict-icon').textContent   = d.icon;
+        const statusEl = document.getElementById('demo-verdict-status');
+        statusEl.className = 'demo-verdict-status ' + d.statusClass;
+        statusEl.textContent = d.status;
         document.getElementById('demo-verdict-reason').textContent = d.reason;
+        document.getElementById('demo-criteria-list').innerHTML = d.criteria.map(c =>
+          `<div class="demo-criterion"><span class="crit-dot ${c.cls}"></span>${c.text}</div>`
+        ).join('');
         document.getElementById('demo-footer-note').textContent = d.note;
-        const list = document.getElementById('demo-criteria-list');
-        list.innerHTML = '';
-        d.criteria.forEach(c => {
-          const row = document.createElement('div');
-          row.className = 'demo-criterion';
-          row.innerHTML = '<span class="crit-dot '+c.status+'"></span><span>'+c.label+'</span>';
-          list.appendChild(row);
-        });
         panel.classList.remove('fading');
       }, 180);
     }
 
-    document.querySelectorAll('.demo-mode-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.demo-mode-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-        btn.classList.add('active'); btn.setAttribute('aria-selected','true');
-        renderDemo(btn.dataset.mode);
-      });
+    document.getElementById('demo-modes').addEventListener('click', e => {
+      const btn = e.target.closest('.demo-mode-btn');
+      if (!btn) return;
+      document.querySelectorAll('.demo-mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      switchDemo(btn.dataset.mode);
     });
-
-    renderDemo('regulatory');
   </script>
 
 </body>
