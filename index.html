@@ -24,7 +24,7 @@
       </button>
       <div class="topbar-links">
         <div class="topbar-dropdown">
-          <span class="topbar-dropdown-label">Work ↓</span>
+          <span class="topbar-dropdown-label">Work</span>
           <div class="topbar-dropdown-menu">
             <div class="topbar-dropdown-menu-inner">
               <a href="#work">Selected Work</a>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="topbar-dropdown">
-          <span class="topbar-dropdown-label">About ↓</span>
+          <span class="topbar-dropdown-label">About</span>
           <div class="topbar-dropdown-menu">
             <div class="topbar-dropdown-menu-inner">
               <a href="#about">About</a>
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="topbar-dropdown">
-          <span class="topbar-dropdown-label">Contact ↓</span>
+          <span class="topbar-dropdown-label">Contact</span>
           <div class="topbar-dropdown-menu">
             <div class="topbar-dropdown-menu-inner">
               <a href="mailto:yujou.ting@edu.em-lyon.com">Email</a>
@@ -57,7 +57,8 @@
       </div>
     </div>
   </nav>
-  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+  <div class="cursor-dot"  id="cursor-dot"></div>
 
   <div class="layout">
 
@@ -153,6 +154,7 @@
               <span class="impact-chip">DSA</span>
               <span class="impact-chip">VLOPs</span>
               <span class="impact-chip">EU Regulation</span>
+              <span class="impact-chip">AI Act</span>
             </div>
           </div>
           <div class="impact-anno-left impact-anno-left--b">
@@ -273,13 +275,15 @@
           <p class="research-featured-title">How audit frameworks construct what they claim to measure</p>
           <p class="research-featured-desc">Drawing on STS and critical algorithm studies, this research examines how the evaluation frameworks ML auditing relies on — labeling guidelines, performance metrics, compliance thresholds — are themselves institutionally constructed within the same political and commercial environments as the systems they assess.</p>
           <p class="research-featured-desc">The result is a form of structured epistemic dependence: auditing frameworks stabilize institutionally constructed definitions of correctness, risk, and acceptable behavior.</p>
-          <p class="research-featured-wip">Working thesis. Expected completion mid 2027.</p>
+          <div class="research-featured-wip">Working thesis. Expected completion mid 2027.</p>
         </div>
+
+        <p class="research-dataset-note">The simulator runs on the UCI Adult Income dataset (n ≈ 48,000). A logistic regression model predicts whether an individual earns above $50K, using sex as the protected attribute. The same trained model is then evaluated under four governance frameworks — each applying different thresholds and priorities — producing different audit outcomes from identical predictions.</p>
 
         <div class="demo-widget" id="demo-widget">
           <div class="demo-header">
             <span class="demo-header-label">Audit Framework Simulator — Interactive Demo</span>
-            <span class="demo-header-tag">same model · different frameworks · different verdicts</span>
+            <span class="demo-header-tag">Click a governance mode to see how the same model produces a different audit outcome.</span>
           </div>
           <div class="demo-body">
             <div class="demo-modes" id="demo-modes">
@@ -304,9 +308,10 @@
               <div class="demo-model-info">
                 <span class="demo-model-label">Model under audit</span>
                 <div class="demo-model-stats">
-                  <span class="demo-stat">Accuracy <strong>84%</strong></span>
-                  <span class="demo-stat">Demographic parity gap <strong>0.12</strong></span>
-                  <span class="demo-stat">False negative rate <strong>18%</strong></span>
+                  <span class="demo-stat">Dataset <strong>UCI Adult Income</strong></span>
+                  <span class="demo-stat">Accuracy <strong>82.4%</strong></span>
+                  <span class="demo-stat">Parity gap <strong>0.19</strong></span>
+                  <span class="demo-stat">Protected attribute <strong>Sex</strong></span>
                 </div>
               </div>
               <div class="demo-verdict-box" id="demo-verdict-box">
@@ -403,7 +408,7 @@
             <div class="about-note-content">
               <p>There is no particular event that explains why I ended up here. No single internship, course, or encounter that I can point to and say: that is where this started.</p>
               <p>I grew up paying close attention to things. To how people talk about what they believe versus what they actually do. To how systems describe themselves versus how they behave. To the gap between the language used to justify something and the thing itself. I do not know exactly where that disposition came from. It was not installed by anything specific. It just seems to be how I am.</p>
-              <p>Most of what I work on now — governance, accountability, the frameworks people use to evaluate AI — comes from that same place. Not because I chose a field, but because these turned out to be the questions I had already been asking.</p>
+              <p>Most of what I work on now — governance, accountability, the frameworks people use to evaluate AI — comes from that same place. They turned out to be the questions I had already been asking.</p>
               <p>If you are reading this, you probably already noticed that something on this site does not quite fit a standard profile. That is not an accident. I am still early. But I think the shape of how I think is already here, and that feels like the more important thing.</p>
             </div>
           </div>
@@ -540,12 +545,17 @@
     });
 
     // Cursor
+    const glow = document.getElementById('cursor-glow');
     const dot = document.getElementById('cursor-dot');
     let rafPending = false;
     document.addEventListener('mousemove', e => {
-      if (!rafPending) { rafPending = true; requestAnimationFrame(() => { dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px'; dot.style.opacity = '0.4'; rafPending = false; }); }
+      if (!rafPending) { rafPending = true; requestAnimationFrame(() => {
+        glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; glow.style.opacity = '0.13';
+        dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px'; dot.style.opacity = '0.4';
+        rafPending = false;
+      }); }
     });
-    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; });
+    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; dot.style.opacity = '0'; });
 
     // Scroll theme
     const themes = {
@@ -673,46 +683,46 @@
     // Demo Widget
     const demoData = {
       regulatory: {
-        icon: '⚠️', statusClass: 'conditional', status: 'Conditional Pass',
-        reason: 'Model meets minimum accuracy thresholds under EU AI Act Article 9, but the demographic parity gap of 0.12 exceeds the 0.10 ceiling set by GDPR non-discrimination requirements. Deployment requires documented mitigation measures and a Data Protection Impact Assessment.',
+        icon: '✕', statusClass: 'fail', status: 'Fail',
+        reason: 'Demographic parity gap of 0.19 exceeds the 0.10 regulatory ceiling. Male positive rate is 30.2%, female 11.1% — a structural disparity that cannot be offset by accuracy performance under this framework.',
         criteria: [
           { cls: 'pass', text: 'Accuracy ≥ 80% (EU AI Act minimum)' },
-          { cls: 'fail', text: 'Demographic parity gap ≤ 0.10 (GDPR Art. 22)' },
-          { cls: 'warn', text: 'False negative rate requires DPIA documentation' },
+          { cls: 'fail', text: 'Demographic parity gap ≤ 0.10 — measured at 0.19' },
+          { cls: 'warn', text: 'False negative rate flagged for DPIA documentation' },
           { cls: 'pass', text: 'Transparency obligations met' }
         ],
-        note: 'Framework prioritizes: legal compliance thresholds · documented accountability · GDPR non-discrimination ceilings'
+        note: 'Framework prioritizes: GDPR non-discrimination ceilings · documented accountability · demographic parity'
       },
       business: {
         icon: '✓', statusClass: 'pass', status: 'Pass',
-        reason: 'Model delivers strong accuracy (84%) with commercially acceptable error rates. Parity gap is within operational tolerance. Cleared for deployment with standard performance monitoring.',
+        reason: 'Model accuracy of 82.4% meets the business performance threshold. Demographic parity gap is noted but does not constitute a blocking condition under this framework.',
         criteria: [
-          { cls: 'pass', text: 'Accuracy ≥ 80% — exceeds threshold' },
-          { cls: 'pass', text: 'Parity gap within acceptable operational range' },
+          { cls: 'pass', text: 'Accuracy > 82% — measured at 82.4%' },
+          { cls: 'pass', text: 'Parity gap within operational tolerance' },
           { cls: 'pass', text: 'False negative rate acceptable for use case' },
           { cls: 'pass', text: 'Explainability documentation present' }
         ],
         note: 'Framework prioritizes: predictive performance · commercial viability · operational cost of errors'
       },
       risk: {
-        icon: '✕', statusClass: 'fail', status: 'Fail',
-        reason: 'False negative rate of 18% is unacceptable. Each missed case represents a high-consequence failure. Headline accuracy conceals an asymmetric error distribution that poses unacceptable operational risk.',
+        icon: '✓', statusClass: 'pass', status: 'Pass',
+        reason: 'Lower decision threshold (0.30) reduces false negatives. FNR falls within the 15% tolerance. The framework accepts higher false positive rates to minimize missed high-consequence cases.',
         criteria: [
           { cls: 'pass', text: 'Accuracy ≥ 80% — acceptable' },
-          { cls: 'warn', text: 'Parity gap flagged for monitoring' },
-          { cls: 'fail', text: 'False negative rate exceeds 10% ceiling' },
+          { cls: 'warn', text: 'Parity gap elevated — flagged for monitoring' },
+          { cls: 'pass', text: 'False negative rate < 15% — met at threshold 0.30' },
           { cls: 'pass', text: 'Explainability documentation present' }
         ],
         note: 'Framework prioritizes: false negative minimization · precautionary thresholds · asymmetric error weighting'
       },
       public: {
         icon: '✕', statusClass: 'fail', status: 'Fail',
-        reason: 'Demographic parity gap of 0.12 is disqualifying. Aggregate accuracy obscures structurally unequal outcomes across protected groups. The model cannot be deployed without meaningful bias remediation.',
+        reason: 'Equal opportunity gap of 0.15 exceeds the 0.08 ceiling. True positive rates differ substantially across gender groups — the model systematically misses eligible women at a higher rate than men.',
         criteria: [
           { cls: 'pass', text: 'Accuracy ≥ 80% — met, but insufficient alone' },
-          { cls: 'fail', text: 'Demographic parity gap exceeds 0.05 ceiling' },
-          { cls: 'warn', text: 'False negative rate disproportionate across groups' },
-          { cls: 'fail', text: 'Disparate impact fails public scrutiny test' }
+          { cls: 'fail', text: 'Equal opportunity gap ≤ 0.08 — measured at 0.15' },
+          { cls: 'fail', text: 'Disparate impact fails public scrutiny test' },
+          { cls: 'warn', text: 'Demographic parity gap requires remediation' }
         ],
         note: 'Framework prioritizes: equal outcomes across groups · societal accountability · disparate impact thresholds'
       }
