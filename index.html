@@ -272,13 +272,15 @@
 
         <div class="research-featured">
           <p class="research-featured-meta">Working Thesis · Science &amp; Technology Studies · Critical Algorithm Studies</p>
-          <p class="research-featured-title">How audit frameworks construct what they claim to measure</p>
-          <p class="research-featured-desc">Drawing on STS and critical algorithm studies, this research examines how the evaluation frameworks ML auditing relies on — labeling guidelines, performance metrics, compliance thresholds — are themselves institutionally constructed within the same political and commercial environments as the systems they assess.</p>
-          <p class="research-featured-desc">The result is a form of structured epistemic dependence: auditing frameworks stabilize institutionally constructed definitions of correctness, risk, and acceptable behavior.</p>
-          <div class="research-featured-wip">Working thesis. Expected completion mid 2027.</p>
+          <p class="research-featured-title">How Audit Frameworks Construct Correctness</p>
+          <p class="research-featured-desc">ML auditing presents itself as an independent mechanism of accountability — a technically rigorous, externally positioned check on systems whose behavior has become politically consequential. But this claim to independence rests on a set of evaluation references that are rarely interrogated: the labeled datasets used to establish ground truth, the performance metrics used to define acceptable behavior, the compliance thresholds used to determine pass or fail. This research argues that these references are not external to the systems they evaluate. They are institutionally constructed within the same political and commercial environments — by the same platforms, regulators, and intermediaries — that produce the systems under audit.</p>
+          <p class="research-featured-desc">The result is what this thesis terms <em>structured epistemic dependence</em>: a condition in which auditing frameworks stabilize institutionally constructed definitions of correctness, risk, and acceptable behavior, rather than independently verifying them. Under this condition, audit does not resolve whether a model is fair or safe. It resolves whether a model conforms to a particular framework's definition of fairness or safety — a definition that is itself a product of the same structures it claims to evaluate. The question this research pursues is not whether ML auditing works technically, but what it does institutionally: whose assumptions it encodes, whose definitions it stabilizes, and what remains invisible inside it.</p>
+          <p class="research-featured-wip">Working thesis. Expected completion mid 2027. Supervised by Saeed Varasteh Yazdi · emlyon Business School.</p>
         </div>
 
-        <p class="research-dataset-note">The simulator runs on the UCI Adult Income dataset (n ≈ 48,000). A logistic regression model predicts whether an individual earns above $50K, using sex as the protected attribute. The same trained model is then evaluated under four governance frameworks — each applying different thresholds and priorities — producing different audit outcomes from identical predictions.</p>
+        <p class="research-simulator-framing">The simulator below is a demonstration of this argument — not a fairness playground, but an illustration of how institutional assumptions become encoded in evaluation procedures. The same trained model, evaluated under four governance frameworks, produces different verdicts. What changes is not the model. What changes is the institutional logic applied to it.</p>
+
+        <p class="research-dataset-note">Dataset: UCI Adult Income (n ≈ 48,000) · Model: Logistic Regression · Task: predict income &gt; $50K · Protected attribute: Sex (M/F) · Metrics computed on held-out test set (30%), random_state=42.</p>
 
         <div class="demo-widget" id="demo-widget">
           <div class="demo-header">

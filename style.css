@@ -699,6 +699,17 @@ body.dark .crit-dot.fail { background: #d96060; }
   border-top: 0.5px solid var(--rule-soft);
 }
 
+/* ── RESEARCH simulator framing ── */
+.research-simulator-framing {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.85;
+  font-weight: 500;
+  max-width: 680px;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
 /* ── RESEARCH dataset note ── */
 .research-dataset-note {
   font-size: 11.5px;
